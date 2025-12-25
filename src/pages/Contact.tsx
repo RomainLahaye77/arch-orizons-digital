@@ -29,22 +29,38 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('https://formspree.io/f/xjgvbkyv', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      if (response.ok) {
+        setIsSubmitted(true);
+        toast({
+          title: 'Message envoyé !',
+          description: 'Je vous répondrai dans les plus brefs délais.',
+        });
 
-    toast({
-      title: 'Message envoyé !',
-      description: 'Nous vous répondrons dans les plus brefs délais.',
-    });
-
-    // Reset form after a delay
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitted(false);
-    }, 3000);
+        setTimeout(() => {
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          setIsSubmitted(false);
+        }, 3000);
+      } else {
+        throw new Error('Erreur lors de l\'envoi');
+      }
+    } catch (error) {
+      toast({
+        title: 'Erreur',
+        description: 'Une erreur est survenue. Veuillez réessayer.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
