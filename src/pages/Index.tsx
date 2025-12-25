@@ -37,20 +37,19 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary leading-tight mb-6"
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary leading-tight mb-6 drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]"
             >
               L'expertise archéologique au service de la{' '}
-              <span className="text-terracotta">documentation numérique</span>
+              <span className="text-terracotta drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]">documentation numérique</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10"
+              className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
             >
-              Documentation 3D par photogrammétrie, expertise en art rupestre et
-              consulting académique pour la recherche et le patrimoine culturel.
+              Documentation 3D (photogrammétrie, lasergrammétrie, télémétrie), expertise en art rupestre et consulting académique pour la recherche et le patrimoine culturel.
             </motion.p>
 
             <motion.div
@@ -114,13 +113,13 @@ const Index = () => {
                 icon: Scan,
                 title: 'Documentation 3D',
                 description:
-                  'Relevés photogrammétriques de haute précision pour la conservation et l\'analyse du patrimoine.',
+                  'Scans de haute précision réalisés par lasergrammétrie et photogrammétrie pour la conservation et l\'analyse du patrimoine.',
               },
               {
                 icon: Mountain,
                 title: 'Art Rupestre',
                 description:
-                  'Spécialisation en art rupestre d\'Afrique australe, avec une approche méthodologique rigoureuse.',
+                  'Spécialisation en art rupestre, avec une approche méthodologique rigoureuse.',
               },
               {
                 icon: GraduationCap,
