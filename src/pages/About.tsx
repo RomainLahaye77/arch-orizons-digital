@@ -99,29 +99,24 @@ const About = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <div className="flex items-center gap-2 text-muted-foreground mb-4">
-                <MapPin size={16} className="text-terracotta" />
-                <span className="text-sm">Guérande, Loire-Atlantique</span>
-              </div>
               <h2 className="font-display text-3xl md:text-4xl font-semibold text-primary mb-6">
                 Chercheur & Entrepreneur
               </h2>
               <div className="prose prose-lg text-muted-foreground space-y-4">
                 <p>
-                  Titulaire d'un doctorat en archéologie préhistorique, j'ai
-                  consacré mes recherches à l'étude de l'art rupestre d'Afrique
-                  australe, combinant approches méthodologiques innovantes et
+                  Je suis titulaire d'un doctorat d'Histoire de l'Université Paris 1 
+                  Panthéon-Sorbonne. J'ai consacré mes recherches à l'étude des arts 
+                  rupestres d'Afrique australe, du bouclier canadien et de l'art 
+                  pariétal ouest européen.
+                </p>
+                <p>
+                  Mes recherches combinent approches méthodologiques innovantes et 
                   travail de terrain.
                 </p>
                 <p>
-                  Cette expérience m'a permis de développer une expertise solide
-                  en documentation numérique du patrimoine, notamment par les
+                  Ces diverses expériences m'ont permis de développer une expertise 
+                  solide en documentation numérique du patrimoine, notamment par les 
                   techniques de photogrammétrie et de modélisation 3D.
-                </p>
-                <p>
-                  Aujourd'hui, avec Archéorizons, je mets cette expertise au
-                  service de projets de recherche, de conservation et de
-                  valorisation du patrimoine archéologique.
                 </p>
               </div>
             </AnimatedSection>
