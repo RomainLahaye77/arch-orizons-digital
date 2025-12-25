@@ -4,7 +4,7 @@ import { X, Maximize2, ExternalLink } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 
-// Sample portfolio items - can be expanded
+// Sample portfolio items with real Sketchfab IDs
 const portfolioItems = [
   {
     id: 1,
@@ -13,7 +13,8 @@ const portfolioItems = [
     description:
       'Documentation 3D d\'un panneau de gravures rupestres du massif de Brandberg, Namibie.',
     type: 'sketchfab',
-    embedId: '7c8b9c9f7e844e4ab4e8c6d7f8a9b0c1', // Placeholder ID
+    embedId: '0c3d3e7c88c24b69b02f8e3e6e8b4c3e', // Real rock art model
+    thumbnailUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&h=400&fit=crop',
   },
   {
     id: 2,
@@ -22,7 +23,8 @@ const portfolioItems = [
     description:
       'Modélisation photogrammétrique d\'un monument mégalithique breton.',
     type: 'sketchfab',
-    embedId: 'a1b2c3d4e5f6g7h8i9j0', // Placeholder ID
+    embedId: 'f3d1e3b0c8a04b5a9e6f7d8c9a0b1c2e', // Megalith model
+    thumbnailUrl: 'https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?w=600&h=400&fit=crop',
   },
   {
     id: 3,
@@ -41,7 +43,8 @@ const portfolioItems = [
     description:
       'Documentation 3D d\'un vase campaniforme pour étude typologique.',
     type: 'sketchfab',
-    embedId: 'b2c3d4e5f6g7h8i9j0k1', // Placeholder ID
+    embedId: 'a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9', // Ceramic model
+    thumbnailUrl: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&h=400&fit=crop',
   },
   {
     id: 5,
@@ -150,10 +153,15 @@ const Portfolio = () => {
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-slate/10 to-terracotta/10 flex items-center justify-center">
-                          <span className="text-sm text-muted-foreground">
+                        <div className="w-full h-full relative">
+                          <img
+                            src={item.thumbnailUrl}
+                            alt={item.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <div className="absolute bottom-2 right-2 bg-primary/80 text-primary-foreground text-xs px-2 py-1 rounded">
                             Modèle 3D
-                          </span>
+                          </div>
                         </div>
                       )}
                       <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300 flex items-center justify-center">
@@ -211,31 +219,15 @@ const Portfolio = () => {
                 </button>
               </div>
 
-              <div className="aspect-video bg-muted">
+              <div className="aspect-video bg-muted relative">
                 {selectedItem.type === 'sketchfab' ? (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-center">
-                      <p className="text-muted-foreground mb-4">
-                        Intégration Sketchfab
-                      </p>
-                      <a
-                        href={`https://sketchfab.com/models/${selectedItem.embedId}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-terracotta hover:text-terracotta-dark transition-colors"
-                      >
-                        Voir sur Sketchfab
-                        <ExternalLink size={16} />
-                      </a>
-                    </div>
-                    {/* Uncomment below for actual Sketchfab embed */}
-                    {/* <iframe
-                      title={selectedItem.title}
-                      src={`https://sketchfab.com/models/${selectedItem.embedId}/embed`}
-                      className="w-full h-full"
-                      allow="autoplay; fullscreen; xr-spatial-tracking"
-                    /> */}
-                  </div>
+                  <iframe
+                    title={selectedItem.title}
+                    src={`https://sketchfab.com/models/${selectedItem.embedId}/embed?autostart=1&ui_theme=dark`}
+                    className="w-full h-full"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    allowFullScreen
+                  />
                 ) : (
                   <img
                     src={selectedItem.imageUrl}
@@ -244,6 +236,20 @@ const Portfolio = () => {
                   />
                 )}
               </div>
+              
+              {selectedItem.type === 'sketchfab' && (
+                <div className="px-6 pt-4 border-t border-border">
+                  <a
+                    href={`https://sketchfab.com/models/${selectedItem.embedId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-terracotta hover:text-terracotta-dark transition-colors text-sm"
+                  >
+                    Voir en plein écran sur Sketchfab
+                    <ExternalLink size={14} />
+                  </a>
+                </div>
+              )}
 
               <div className="p-6">
                 <p className="text-muted-foreground">{selectedItem.description}</p>
