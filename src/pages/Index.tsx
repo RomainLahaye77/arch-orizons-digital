@@ -23,7 +23,7 @@ const Index = () => {
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent z-0" />
 
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-6 pt-20">
+        <div className="relative z-10 container mx-auto px-6 pt-32 md:pt-40">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
