@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Scan, Mountain, GraduationCap, ArrowRight, Check } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import documentation3dImage from '@/assets/documentation-3d.jpg';
 
 const services = [
   {
@@ -18,6 +19,7 @@ const services = [
       'Exports multi-formats (OBJ, PLY, PDF 3D)',
       'Intégration SIG et webviewer',
     ],
+    image: documentation3dImage,
   },
   {
     icon: Mountain,
@@ -115,9 +117,19 @@ const Services = () => {
                   <div
                     className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}
                   >
-                    <div className="aspect-[4/3] bg-gradient-to-br from-slate/5 to-terracotta/10 rounded-2xl flex items-center justify-center border border-border/30">
-                      <service.icon className="w-32 h-32 text-slate/10" />
-                    </div>
+                    {service.image ? (
+                      <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border/30">
+                        <img 
+                          src={service.image} 
+                          alt={service.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div className="aspect-[4/3] bg-gradient-to-br from-slate/5 to-terracotta/10 rounded-2xl flex items-center justify-center border border-border/30">
+                        <service.icon className="w-32 h-32 text-slate/10" />
+                      </div>
+                    )}
                     <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-terracotta/10 rounded-full blur-2xl" />
                   </div>
                 </div>
