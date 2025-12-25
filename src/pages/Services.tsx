@@ -12,8 +12,8 @@ const services = [
     description:
       'Création de modèles 3D haute résolution par lasergrammétrie et photogrammétrie pour la documentation, la conservation et la valorisation du patrimoine archéologique.',
     features: [
-      'Modélisation de grottes, d\'abris ornés, d\'objets et de structures',
-      'Relevés de terrain',
+      'Modélisation de grottes, d\'abris ornés, d\'objets et de diverses structures',
+      'Établissement de relevés de terrain',
       'Orthomosaïques et plans géoréférencés',
       'Exports multi-formats (OBJ, PLY, PDF 3D)',
       'Intégration SIG et webviewer',
