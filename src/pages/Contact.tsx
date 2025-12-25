@@ -107,7 +107,7 @@ const Contact = () => {
                       <div>
                         <p className="font-medium text-foreground">Localisation</p>
                         <p className="text-muted-foreground text-sm mt-1">
-                          Basé à Guérande, Pays de la Loire
+                          Basé à Guérande, Loire-Atlantique.
                         </p>
                         <p className="text-muted-foreground text-sm">
                           Interventions : Grand Ouest et France entière
@@ -269,7 +269,7 @@ const Contact = () => {
           <div className="text-center">
             <MapPin className="w-12 h-12 text-terracotta/30 mx-auto mb-4" />
             <p className="text-muted-foreground font-medium">
-              Guérande, Pays de la Loire
+              Guérande, Loire-Atlantique.
             </p>
             <p className="text-muted-foreground/70 text-sm mt-1">
               Interventions dans le Grand Ouest et sur toute la France
