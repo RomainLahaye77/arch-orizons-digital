@@ -11,14 +11,16 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 top-32">
           <img
             src={heroImage}
             alt="Nuage de points 3D archéologique"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-top"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
         </div>
+        {/* Top gradient to hide image behind navbar */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent z-0" />
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-6 pt-20">
