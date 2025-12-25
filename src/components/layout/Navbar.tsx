@@ -39,16 +39,16 @@ const Navbar = () => {
       }`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-4 group">
           <img 
             src={logoMammouth} 
             alt="Archéorizons Logo" 
-            className="h-14 md:h-20 w-auto transition-transform group-hover:scale-105"
+            className="h-20 md:h-28 w-auto transition-transform group-hover:scale-105"
           />
           <img 
             src={logoTexte} 
             alt="Archéorizons" 
-            className="hidden sm:block h-10 md:h-14 w-auto transition-transform group-hover:scale-105"
+            className="hidden sm:block h-14 md:h-20 w-auto transition-transform group-hover:scale-105"
           />
         </Link>
 
