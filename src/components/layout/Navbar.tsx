@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import logo from '@/assets/logo-complet.jpg';
+import logoMammouth from '@/assets/logo-mammouth.jpg';
+import logoTexte from '@/assets/logo-texte.jpg';
 
 const navLinks = [
   { name: 'Accueil', path: '/' },
@@ -38,11 +39,16 @@ const Navbar = () => {
       }`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <img 
-            src={logo} 
+            src={logoMammouth} 
+            alt="Archéorizons Logo" 
+            className="h-14 md:h-20 w-auto transition-transform group-hover:scale-105"
+          />
+          <img 
+            src={logoTexte} 
             alt="Archéorizons" 
-            className="h-10 md:h-12 w-auto transition-transform group-hover:scale-105"
+            className="hidden sm:block h-10 md:h-14 w-auto transition-transform group-hover:scale-105"
           />
         </Link>
 
