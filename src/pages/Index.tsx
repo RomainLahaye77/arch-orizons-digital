@@ -29,7 +29,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="inline-block px-4 py-2 bg-terracotta/10 text-terracotta text-sm font-medium rounded-full mb-6">
-                Expertise archéologique · Guérande
+                Expertise archéologique · Grand Ouest
               </span>
             </motion.div>
 
