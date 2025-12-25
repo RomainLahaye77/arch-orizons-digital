@@ -107,7 +107,10 @@ const Contact = () => {
                       <div>
                         <p className="font-medium text-foreground">Localisation</p>
                         <p className="text-muted-foreground text-sm mt-1">
-                          Grand Ouest, France
+                          Basé à Guérande, Pays de la Loire
+                        </p>
+                        <p className="text-muted-foreground text-sm">
+                          Interventions : Grand Ouest et France entière
                         </p>
                       </div>
                     </li>
@@ -265,8 +268,11 @@ const Contact = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <MapPin className="w-12 h-12 text-terracotta/30 mx-auto mb-4" />
-            <p className="text-muted-foreground">
-              Grand Ouest, France
+            <p className="text-muted-foreground font-medium">
+              Guérande, Pays de la Loire
+            </p>
+            <p className="text-muted-foreground/70 text-sm mt-1">
+              Interventions dans le Grand Ouest et sur toute la France
             </p>
           </div>
         </div>
