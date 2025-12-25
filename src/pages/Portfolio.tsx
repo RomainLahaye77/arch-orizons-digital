@@ -4,71 +4,43 @@ import { X, Maximize2, ExternalLink } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 
-// Sample portfolio items with real Sketchfab IDs
-const portfolioItems = [
+// Type pour les items du portfolio
+type PortfolioItem = {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  type: 'image' | 'sketchfab';
+  imageUrl?: string;
+  embedId?: string;
+  thumbnailUrl?: string;
+};
+
+// Portfolio items - à compléter avec vos propres modèles Sketchfab et images
+const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    title: 'Gravures rupestres de Brandberg',
-    category: 'Art Rupestre',
+    title: 'Exemple Art Rupestre',
+    category: 'Art rupestre',
     description:
-      'Documentation 3D d\'un panneau de gravures rupestres du massif de Brandberg, Namibie.',
-    type: 'sketchfab',
-    embedId: '0c3d3e7c88c24b69b02f8e3e6e8b4c3e', // Real rock art model
-    thumbnailUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&h=400&fit=crop',
-  },
-  {
-    id: 2,
-    title: 'Dolmen de la Pierre Plate',
-    category: 'Mégalithisme',
-    description:
-      'Modélisation photogrammétrique d\'un monument mégalithique breton.',
-    type: 'sketchfab',
-    embedId: 'f3d1e3b0c8a04b5a9e6f7d8c9a0b1c2e', // Megalith model
-    thumbnailUrl: 'https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?w=600&h=400&fit=crop',
-  },
-  {
-    id: 3,
-    title: 'Site de Twyfelfontein',
-    category: 'Art Rupestre',
-    description:
-      'Relevé ortho-photographique d\'un ensemble de pétroglyphes, Namibie.',
+      'Description de votre projet d\'art rupestre.',
     type: 'image',
     imageUrl:
       'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&h=800&fit=crop',
   },
   {
-    id: 4,
-    title: 'Céramique préhistorique',
-    category: 'Mobilier',
+    id: 2,
+    title: 'Exemple Art Pariétal',
+    category: 'Art pariétal',
     description:
-      'Documentation 3D d\'un vase campaniforme pour étude typologique.',
-    type: 'sketchfab',
-    embedId: 'a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9', // Ceramic model
-    thumbnailUrl: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&h=400&fit=crop',
-  },
-  {
-    id: 5,
-    title: 'Abri sous roche de Tsodilo',
-    category: 'Art Rupestre',
-    description:
-      'Panneau peint des collines de Tsodilo, Botswana - patrimoine UNESCO.',
+      'Description de votre projet d\'art pariétal.',
     type: 'image',
     imageUrl:
       'https://images.unsplash.com/photo-1551524163-d00e85e9d9d5?w=1200&h=800&fit=crop',
   },
-  {
-    id: 6,
-    title: 'Tumulus de Carnac',
-    category: 'Mégalithisme',
-    description:
-      'Ortho-image aérienne d\'un ensemble funéraire néolithique.',
-    type: 'image',
-    imageUrl:
-      'https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?w=1200&h=800&fit=crop',
-  },
 ];
 
-const categories = ['Tous', 'Art Rupestre', 'Mégalithisme', 'Mobilier'];
+const categories = ['Tous', 'Art rupestre', 'Art pariétal'];
 
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState('Tous');
