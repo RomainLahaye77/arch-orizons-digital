@@ -43,12 +43,12 @@ const Navbar = () => {
           <img 
             src={logoMammouth} 
             alt="Archéorizons Logo" 
-            className="h-20 md:h-28 w-auto transition-transform group-hover:scale-105 mix-blend-multiply"
+            className="h-20 md:h-28 w-auto transition-transform group-hover:scale-105"
           />
           <img 
             src={logoTexte} 
             alt="Archéorizons" 
-            className="hidden sm:block h-14 md:h-20 w-auto transition-transform group-hover:scale-105 mix-blend-multiply"
+            className="hidden sm:block h-14 md:h-20 w-auto transition-transform group-hover:scale-105"
           />
         </Link>
 
