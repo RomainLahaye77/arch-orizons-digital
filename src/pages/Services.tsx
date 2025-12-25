@@ -8,13 +8,13 @@ const services = [
   {
     icon: Scan,
     title: 'Documentation 3D',
-    subtitle: 'Photogrammétrie',
+    subtitle: '',
     description:
-      'Création de modèles 3D haute résolution par photogrammétrie pour la documentation, la conservation et la valorisation du patrimoine archéologique.',
+      'Création de modèles 3D haute résolution par lasergrammétrie et photogrammétrie pour la documentation, la conservation et la valorisation du patrimoine archéologique.',
     features: [
-      'Relevés photogrammétriques de terrain',
-      'Modélisation d\'objets et de structures',
-      'Ortho-images et plans géoréférencés',
+      'Relevés de terrain',
+      'Modélisation de grottes, d\'abris ornés, d\'objets et de structures',
+      'Orthomosaïques et plans géoréférencés',
       'Exports multi-formats (OBJ, PLY, PDF 3D)',
       'Intégration SIG et webviewer',
     ],
