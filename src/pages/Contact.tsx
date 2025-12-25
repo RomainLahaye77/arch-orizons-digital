@@ -107,9 +107,7 @@ const Contact = () => {
                       <div>
                         <p className="font-medium text-foreground">Localisation</p>
                         <p className="text-muted-foreground text-sm mt-1">
-                          Guérande, Loire-Atlantique
-                          <br />
-                          France
+                          Grand Ouest, France
                         </p>
                       </div>
                     </li>
@@ -268,7 +266,7 @@ const Contact = () => {
           <div className="text-center">
             <MapPin className="w-12 h-12 text-terracotta/30 mx-auto mb-4" />
             <p className="text-muted-foreground">
-              Guérande, Loire-Atlantique
+              Grand Ouest, France
             </p>
           </div>
         </div>
