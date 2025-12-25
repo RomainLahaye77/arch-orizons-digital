@@ -59,7 +59,7 @@ const Services = () => {
   return (
     <Layout>
       {/* Header */}
-      <section className="pt-32 pb-16 bg-cream">
+      <section className="pt-40 pb-16 bg-cream">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
