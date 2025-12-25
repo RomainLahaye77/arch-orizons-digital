@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { GraduationCap, MapPin, BookOpen, Award, ArrowRight } from 'lucide-react';
+import { GraduationCap, BookOpen, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
-
+import photoProfil from '@/assets/photo-profil.jpg';
 const timeline = [
   {
     year: '2024',
@@ -83,16 +83,11 @@ const About = () => {
             <AnimatedSection>
               <div className="relative">
                 <div className="aspect-[4/5] bg-gradient-to-br from-slate/5 to-terracotta/10 rounded-2xl overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-center p-8">
-                      <div className="w-32 h-32 bg-terracotta/10 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <GraduationCap className="w-16 h-16 text-terracotta/40" />
-                      </div>
-                      <p className="text-muted-foreground text-sm">
-                        Photo à venir
-                      </p>
-                    </div>
-                  </div>
+                  <img 
+                    src={photoProfil} 
+                    alt="Photo de profil - Archéologue sur le terrain" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-terracotta/10 rounded-full blur-3xl" />
               </div>
