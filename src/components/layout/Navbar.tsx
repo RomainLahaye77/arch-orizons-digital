@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-background backdrop-blur-md ${
         isScrolled ? 'shadow-elegant py-3' : 'py-5'
       } transition-[padding,box-shadow] duration-300`}
     >
