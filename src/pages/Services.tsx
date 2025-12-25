@@ -4,6 +4,7 @@ import { Scan, Mountain, GraduationCap, ArrowRight, Check } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import documentation3dImage from '@/assets/documentation-3d.jpg';
+import artRupestreImage from '@/assets/art-rupestre.jpg';
 
 const services = [
   {
@@ -34,6 +35,7 @@ const services = [
       'Études de conservation préventive',
       'Rapports scientifiques',
     ],
+    image: artRupestreImage,
   },
   {
     icon: GraduationCap,
