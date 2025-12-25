@@ -5,6 +5,7 @@ import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import documentation3dImage from '@/assets/documentation-3d.jpg';
 import artRupestreImage from '@/assets/art-rupestre.jpg';
+import consultingImage from '@/assets/consulting-academique.jpg';
 
 const services = [
   {
@@ -50,6 +51,7 @@ const services = [
       'Relecture et expertise scientifique',
       'Rédaction d\'articles et rapports',
     ],
+    image: consultingImage,
   },
 ];
 
