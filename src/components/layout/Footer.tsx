@@ -57,7 +57,7 @@ const Footer = () => {
               <li className="flex items-start gap-3 text-sm text-primary-foreground/70">
                 <MapPin size={16} className="text-terracotta-light flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="block">Guérande, Pays de la Loire</span>
+                  <span className="block">Guérande, Loire-Atlantique.</span>
                   <span className="block text-primary-foreground/50 text-xs">Interventions : Grand Ouest & France</span>
                 </div>
               </li>
