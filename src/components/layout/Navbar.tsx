@@ -32,11 +32,9 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-[padding,box-shadow] duration-300 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-elegant py-3'
-          : 'bg-background/80 backdrop-blur-sm py-5'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md ${
+        isScrolled ? 'shadow-elegant py-3' : 'py-5'
+      } transition-[padding,box-shadow] duration-300`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-4 group">
