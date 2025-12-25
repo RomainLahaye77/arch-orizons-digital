@@ -22,9 +22,9 @@ const services = [
   {
     icon: Mountain,
     title: 'Art Rupestre',
-    subtitle: 'Spécialisation Afrique australe',
+    subtitle: '',
     description:
-      'Expertise spécialisée en art rupestre d\'Afrique australe, combinant approche méthodologique rigoureuse et connaissance approfondie du terrain.',
+      'Expertise spécialisée dans l\'étude des arts rupestres, combinant approche méthodologique rigoureuse et documentations approfondies.',
     features: [
       'Inventaire et documentation de sites',
       'Relevés numériques des panneaux',
