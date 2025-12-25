@@ -11,6 +11,9 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="font-display text-2xl font-semibold">Archéorizons</h3>
+            <p className="text-primary-foreground/80 text-sm font-medium">
+              Entreprise Individuelle
+            </p>
             <p className="text-primary-foreground/70 text-sm leading-relaxed max-w-xs">
               Expertise archéologique et documentation 3D pour la recherche et le patrimoine.
             </p>
@@ -67,14 +70,9 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-primary-foreground/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-primary-foreground/50">
-              © {currentYear} Archéorizons. Tous droits réservés.
-            </p>
-            <p className="text-xs text-primary-foreground/50">
-              Micro-entreprise · SIRET en cours
-            </p>
-          </div>
+          <p className="text-xs text-primary-foreground/50 text-center md:text-left">
+            © {currentYear} Archéorizons. Tous droits réservés.
+          </p>
         </div>
       </div>
     </footer>
