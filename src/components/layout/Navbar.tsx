@@ -37,22 +37,27 @@ const Navbar = () => {
       } transition-[padding,box-shadow] duration-300`}
     >
       <nav className="container mx-auto px-6">
-        {/* Desktop Navigation (true centered brand) */}
-        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center">
-          <div aria-hidden="true" />
-
-          <Link to="/" className="flex items-center gap-8 group justify-self-center">
+        {/* Desktop Navigation (equal gaps between mammoth, brand text, and links) */}
+        <div className="hidden md:grid grid-cols-[auto_1fr_auto_1fr_auto] items-center">
+          <Link to="/" className="group justify-self-start">
             <img
               src={logoMammouth}
               alt="Archéorizons Logo"
               className="h-24 md:h-[135px] w-auto transition-transform group-hover:scale-105"
             />
+          </Link>
+
+          <div aria-hidden="true" />
+
+          <Link to="/" className="group justify-self-center">
             <img
               src={logoTexte}
               alt="Archéorizons"
               className="h-[67px] md:h-24 w-auto transition-transform group-hover:scale-105"
             />
           </Link>
+
+          <div aria-hidden="true" />
 
           <ul className="justify-self-end flex items-center gap-8">
             {navLinks.map((link) => (
