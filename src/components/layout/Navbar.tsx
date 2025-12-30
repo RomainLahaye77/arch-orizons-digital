@@ -38,22 +38,28 @@ const Navbar = () => {
     >
       <nav className="container mx-auto px-6 h-32 lg:h-36">
         {/* Desktop Navigation (equal gaps between mammoth, brand text, and links) */}
-        <div className="hidden md:grid grid-cols-[auto_1fr_auto_1fr_auto] items-center h-full">
+        <div className="hidden md:grid grid-cols-[auto_1fr_auto_1fr_auto] items-center h-full overflow-hidden">
           <Link to="/" className="group justify-self-start">
-            <img
+            <motion.img
               src={logoMammouth}
               alt="Archéorizons Logo"
               className="h-28 lg:h-32 w-auto transition-transform group-hover:scale-105"
+              initial={{ opacity: 0, x: 100, scale: 0.3 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
             />
           </Link>
 
           <div aria-hidden="true" />
 
           <Link to="/" className="group justify-self-center">
-            <img
+            <motion.img
               src={logoTexte}
               alt="Archéorizons"
               className="h-20 lg:h-24 w-auto transition-transform group-hover:scale-105"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             />
           </Link>
 
@@ -78,17 +84,23 @@ const Navbar = () => {
         </div>
 
         {/* Mobile / Tablet */}
-        <div className="flex md:hidden items-center justify-between">
+        <div className="flex md:hidden items-center justify-between overflow-hidden">
           <Link to="/" className="flex items-center gap-4 group min-w-0">
-            <img
+            <motion.img
               src={logoMammouth}
               alt="Archéorizons Logo"
               className="h-16 w-auto shrink-0 transition-transform group-hover:scale-105"
+              initial={{ opacity: 0, x: 100, scale: 0.3 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
             />
-            <img
+            <motion.img
               src={logoTexte}
               alt="Archéorizons"
               className="h-10 sm:h-12 w-auto max-w-[200px] object-contain transition-transform group-hover:scale-105"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             />
           </Link>
 
