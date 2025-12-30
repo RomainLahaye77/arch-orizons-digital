@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Scan, Mountain, GraduationCap } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
-import heroImage from '@/assets/hero-pointcloud.jpg';
+import heroImage from '@/assets/hero-art-rupestre.png';
 
 const Index = () => {
   return (
@@ -12,10 +12,13 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img
+          <motion.img
             src={heroImage}
-            alt="Nuage de points 3D archéologique"
+            alt="Art rupestre préhistorique"
             className="w-full h-full object-cover object-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2, ease: "easeOut" }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
         </div>
