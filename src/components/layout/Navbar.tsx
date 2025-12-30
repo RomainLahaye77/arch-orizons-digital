@@ -36,46 +36,65 @@ const Navbar = () => {
         isScrolled ? 'shadow-elegant py-3' : 'py-5'
       } transition-[padding,box-shadow] duration-300`}
     >
-      <nav className="container mx-auto px-6 flex items-center">
-        <Link to="/" className="flex items-center gap-8 group flex-1">
-          <img 
-            src={logoMammouth} 
-            alt="Archéorizons Logo" 
-            className="h-24 md:h-[135px] w-auto transition-transform group-hover:scale-105"
-          />
-          <img 
-            src={logoTexte} 
-            alt="Archéorizons" 
-            className="hidden sm:block h-[67px] md:h-24 w-auto transition-transform group-hover:scale-105"
-          />
-        </Link>
+      <nav className="container mx-auto px-6">
+        {/* Desktop Navigation (true centered brand) */}
+        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center">
+          <div aria-hidden="true" />
 
-        {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.path}>
-              <Link
-                to={link.path}
-                className={`text-sm font-medium transition-colors link-underline ${
-                  location.pathname === link.path
-                    ? 'text-terracotta'
-                    : 'text-foreground hover:text-terracotta'
-                }`}
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+          <Link to="/" className="flex items-center gap-8 group justify-self-center">
+            <img
+              src={logoMammouth}
+              alt="Archéorizons Logo"
+              className="h-24 md:h-[135px] w-auto transition-transform group-hover:scale-105"
+            />
+            <img
+              src={logoTexte}
+              alt="Archéorizons"
+              className="h-[67px] md:h-24 w-auto transition-transform group-hover:scale-105"
+            />
+          </Link>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-foreground hover:text-terracotta transition-colors"
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <ul className="justify-self-end flex items-center gap-8">
+            {navLinks.map((link) => (
+              <li key={link.path}>
+                <Link
+                  to={link.path}
+                  className={`text-sm font-medium transition-colors link-underline ${
+                    location.pathname === link.path
+                      ? 'text-terracotta'
+                      : 'text-foreground hover:text-terracotta'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Mobile / Tablet */}
+        <div className="flex md:hidden items-center justify-between">
+          <Link to="/" className="flex items-center gap-4 group min-w-0">
+            <img
+              src={logoMammouth}
+              alt="Archéorizons Logo"
+              className="h-16 w-auto shrink-0 transition-transform group-hover:scale-105"
+            />
+            <img
+              src={logoTexte}
+              alt="Archéorizons"
+              className="h-10 sm:h-12 w-auto max-w-[200px] object-contain transition-transform group-hover:scale-105"
+            />
+          </Link>
+
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 text-foreground hover:text-terracotta transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Navigation */}
