@@ -18,7 +18,7 @@ const Index = () => {
             className="w-full h-full object-cover object-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 2, ease: "easeOut" }}
+            transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-transparent to-transparent" />
         </div>
@@ -29,7 +29,7 @@ const Index = () => {
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
               className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary leading-tight mb-6 drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]"
             >
               L'expertise archéologique au service de la{' '}
@@ -39,7 +39,7 @@ const Index = () => {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-lg md:text-xl text-primary font-medium max-w-2xl mb-10 [text-shadow:_0_1px_8px_rgb(255_255_255_/_90%),_0_0_20px_rgb(255_255_255_/_70%)]"
             >
               Documentation 3D (photogrammétrie, lasergrammétrie, télémétrie), expertise en art rupestre et consulting académique pour la recherche et le patrimoine culturel.
@@ -48,7 +48,7 @@ const Index = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               className="flex flex-col sm:flex-row gap-4"
             >
               <Link
