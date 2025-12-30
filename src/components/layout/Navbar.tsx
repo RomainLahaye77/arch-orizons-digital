@@ -37,16 +37,16 @@ const Navbar = () => {
       } transition-[padding,box-shadow] duration-300`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-8 group">
+        <Link to="/" className="flex items-center gap-4 md:gap-6 group">
           <img 
             src={logoMammouth} 
             alt="Archéorizons Logo" 
-            className="h-24 md:h-[135px] w-auto transition-transform group-hover:scale-105"
+            className="h-20 md:h-28 w-auto transition-transform group-hover:scale-105"
           />
           <img 
             src={logoTexte} 
             alt="Archéorizons" 
-            className="hidden sm:block h-[67px] md:h-24 w-auto transition-transform group-hover:scale-105"
+            className="hidden sm:block h-14 md:h-20 w-auto transition-transform group-hover:scale-105"
           />
         </Link>
 
