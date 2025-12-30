@@ -16,9 +16,9 @@ const Index = () => {
             src={heroImage}
             alt="Art rupestre préhistorique"
             className="w-full h-full object-cover object-center"
-            initial={{ clipPath: "inset(0 0 100% 0)" }}
-            animate={{ clipPath: "inset(0 0 0% 0)" }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2, ease: "easeOut" }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-transparent to-transparent" />
         </div>
