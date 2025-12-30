@@ -33,17 +33,17 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 bg-background backdrop-blur-md ${
-        isScrolled ? 'shadow-elegant py-3' : 'py-5'
+        isScrolled ? 'shadow-elegant py-2' : 'py-3'
       } transition-[padding,box-shadow] duration-300`}
     >
-      <nav className="container mx-auto px-6">
+      <nav className="container mx-auto px-6 h-20">
         {/* Desktop Navigation (equal gaps between mammoth, brand text, and links) */}
-        <div className="hidden md:grid grid-cols-[auto_1fr_auto_1fr_auto] items-center">
+        <div className="hidden md:grid grid-cols-[auto_1fr_auto_1fr_auto] items-center h-full">
           <Link to="/" className="group justify-self-start">
             <img
               src={logoMammouth}
               alt="Archéorizons Logo"
-              className="h-24 md:h-[135px] w-auto transition-transform group-hover:scale-105"
+              className="h-28 lg:h-36 w-auto transition-transform group-hover:scale-105"
             />
           </Link>
 
@@ -53,7 +53,7 @@ const Navbar = () => {
             <img
               src={logoTexte}
               alt="Archéorizons"
-              className="h-[67px] md:h-24 w-auto transition-transform group-hover:scale-105"
+              className="h-20 lg:h-28 w-auto transition-transform group-hover:scale-105"
             />
           </Link>
 
