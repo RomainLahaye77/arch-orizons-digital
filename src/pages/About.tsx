@@ -34,8 +34,8 @@ const timeline = [
 const expertise = [
   {
     icon: BookOpen,
-    title: 'Art Rupestre',
-    description: 'Expertise approfondie des traditions picturales et gravées d\'Afrique australe.',
+    title: 'Arts Rupestres',
+    description: 'Expertise approfondie des traditions picturales appliquée à des terrains variés.',
   },
   {
     icon: Award,
