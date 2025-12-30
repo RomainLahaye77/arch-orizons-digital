@@ -39,8 +39,8 @@ const expertise = [
   },
   {
     icon: Award,
-    title: 'Photogrammétrie',
-    description: 'Maîtrise des techniques de documentation 3D appliquées à l\'archéologie.',
+    title: 'Modélisation 3D',
+    description: 'Maîtrise des techniques de documentation 3D appliquées à l\'archéologie (Lasergrammétrie, photogrammétrie).',
   },
   {
     icon: GraduationCap,
