@@ -40,7 +40,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
+              className="text-lg md:text-xl text-foreground max-w-2xl mb-10 bg-background/60 backdrop-blur-sm px-4 py-3 rounded-lg"
             >
               Documentation 3D (photogrammétrie, lasergrammétrie, télémétrie), expertise en art rupestre et consulting académique pour la recherche et le patrimoine culturel.
             </motion.p>
