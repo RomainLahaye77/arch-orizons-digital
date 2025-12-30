@@ -20,7 +20,7 @@ const Index = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 2, ease: "easeOut" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background" />
         </div>
 
         {/* Content */}
