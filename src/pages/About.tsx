@@ -7,27 +7,32 @@ import photoProfil from '@/assets/photo-profil.jpg';
 const timeline = [
   {
     year: '2024',
+    title: 'Postdoctorat international à l\'Université de Sherbrooke (Canada)',
+    description:
+      'Recherche sur les arts rupestres du Bouclier canadien (analyses physico-chimiques des matières colorantes, numérisation patrimoniale avancée et développement d\'infrastructures de gestion de données pour une approche intégrée).',
+  },
+  {
+    year: 'Décembre 2024',
     title: 'Création d\'Archéorizons',
     description:
       'Lancement de la micro-entreprise spécialisée en documentation 3D et expertise archéologique.',
   },
   {
-    year: '2020-2024',
+    year: '2016-2023',
     title: 'Doctorat en Archéologie',
     description:
-      'Thèse sur l\'art rupestre d\'Afrique australe - méthodologie, analyse spatiale et interprétation.',
+      'Thèse sur les arts rupestres d\'Afrique du Sud - méthodologie 3D, analyse spatiale et interprétation.',
   },
   {
-    year: '2018-2020',
-    title: 'Master Archéologie',
+    year: '2012-2015',
+    title: 'Master Archéologie et Histoire',
     description:
-      'Spécialisation en préhistoire et documentation numérique du patrimoine.',
+      'Spécialisation en art pariétal et en préhistoire.',
   },
   {
-    year: '2015-2018',
-    title: 'Missions de terrain',
-    description:
-      'Campagnes de documentation en Namibie, Botswana et Afrique du Sud.',
+    year: '2009-2012',
+    title: 'Licence Sociologie Anthropologie',
+    description: '',
   },
 ];
 
