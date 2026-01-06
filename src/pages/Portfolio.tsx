@@ -10,23 +10,24 @@ type PortfolioItem = {
   title: string;
   category: string;
   description: string;
-  type: 'image' | 'sketchfab';
+  type: 'image' | 'sketchfab' | 'youtube';
   imageUrl?: string;
   embedId?: string;
   thumbnailUrl?: string;
+  youtubeId?: string;
 };
 
 // Portfolio items - à compléter avec vos propres modèles Sketchfab et images
 const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    title: 'Exemple Art Rupestre',
+    title: 'Rendu Orthomosaïque HD et relevé',
     category: 'Art rupestre',
     description:
-      'Description de votre projet d\'art rupestre.',
-    type: 'image',
-    imageUrl:
-      'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&h=800&fit=crop',
+      'Un exemple de panneau orné en Afrique du Sud',
+    type: 'youtube',
+    youtubeId: 'gclvjI1lafQ',
+    thumbnailUrl: 'https://img.youtube.com/vi/gclvjI1lafQ/maxresdefault.jpg',
   },
   {
     id: 2,
@@ -124,6 +125,17 @@ const Portfolio = () => {
                           alt={item.title}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
+                      ) : item.type === 'youtube' ? (
+                        <div className="w-full h-full relative">
+                          <img
+                            src={item.thumbnailUrl}
+                            alt={item.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <div className="absolute bottom-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded">
+                            Vidéo
+                          </div>
+                        </div>
                       ) : (
                         <div className="w-full h-full relative">
                           <img
@@ -200,6 +212,14 @@ const Portfolio = () => {
                     allow="autoplay; fullscreen; xr-spatial-tracking"
                     allowFullScreen
                   />
+                ) : selectedItem.type === 'youtube' ? (
+                  <iframe
+                    title={selectedItem.title}
+                    src={`https://www.youtube.com/embed/${selectedItem.youtubeId}?rel=0&modestbranding=1&hd=1`}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 ) : (
                   <img
                     src={selectedItem.imageUrl}
@@ -218,6 +238,20 @@ const Portfolio = () => {
                     className="inline-flex items-center gap-2 text-terracotta hover:text-terracotta-dark transition-colors text-sm"
                   >
                     Voir en plein écran sur Sketchfab
+                    <ExternalLink size={14} />
+                  </a>
+                </div>
+              )}
+              
+              {selectedItem.type === 'youtube' && (
+                <div className="px-6 pt-4 border-t border-border">
+                  <a
+                    href={`https://www.youtube.com/watch?v=${selectedItem.youtubeId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-terracotta hover:text-terracotta-dark transition-colors text-sm"
+                  >
+                    Voir sur YouTube
                     <ExternalLink size={14} />
                   </a>
                 </div>
