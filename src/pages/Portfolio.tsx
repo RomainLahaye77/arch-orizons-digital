@@ -31,13 +31,13 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 2,
-    title: 'Exemple Art Pariétal',
-    category: 'Art pariétal',
+    title: 'Réalisation d\'un relevé',
+    category: 'Art rupestre',
     description:
-      'Description de votre projet d\'art pariétal.',
-    type: 'image',
-    imageUrl:
-      'https://images.unsplash.com/photo-1551524163-d00e85e9d9d5?w=1200&h=800&fit=crop',
+      'Même panneau d\'Afrique du Sud',
+    type: 'youtube',
+    youtubeId: 'e14lX5mZggU',
+    thumbnailUrl: 'https://img.youtube.com/vi/e14lX5mZggU/maxresdefault.jpg',
   },
 ];
 
