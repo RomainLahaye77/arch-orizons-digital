@@ -1,24 +1,32 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { ArrowRight, Scan, Mountain, GraduationCap } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import heroImage from '@/assets/hero-art-rupestre.png';
 
 const Index = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = heroImage;
+    img.onload = () => setImageLoaded(true);
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image - preloaded */}
         <div className="absolute inset-0 z-0">
-          <motion.img
+          <img
             src={heroImage}
             alt="Art rupestre préhistorique"
-            className="w-full h-full object-cover object-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+            className={`w-full h-full object-cover object-center transition-opacity duration-700 ease-out will-change-[opacity] ${
+              imageLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-transparent to-transparent" />
         </div>
@@ -27,29 +35,29 @@ const Index = () => {
         <div className="relative z-10 container mx-auto px-6 pt-32 md:pt-40">
           <div className="max-w-3xl">
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary leading-tight mb-6 drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: imageLoaded ? 1 : 0, y: imageLoaded ? 0 : 20 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary leading-tight mb-6 drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)] will-change-transform"
             >
               L'expertise archéologique au service de la{' '}
               <span className="text-terracotta drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]">documentation numérique</span>
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-lg md:text-xl text-primary font-medium max-w-2xl mb-10 [text-shadow:_0_1px_8px_rgb(255_255_255_/_90%),_0_0_20px_rgb(255_255_255_/_70%)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: imageLoaded ? 1 : 0, y: imageLoaded ? 0 : 20 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+              className="text-lg md:text-xl text-primary font-medium max-w-2xl mb-10 [text-shadow:_0_1px_8px_rgb(255_255_255_/_90%),_0_0_20px_rgb(255_255_255_/_70%)] will-change-transform"
             >
               Documentation 3D (photogrammétrie, lasergrammétrie, télémétrie), expertise en art rupestre et consulting académique pour la recherche et le patrimoine culturel.
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: imageLoaded ? 1 : 0, y: imageLoaded ? 0 : 20 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+              className="flex flex-col sm:flex-row gap-4 will-change-transform"
             >
               <Link
                 to="/services"
@@ -74,13 +82,13 @@ const Index = () => {
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
+          animate={{ opacity: imageLoaded ? 1 : 0 }}
+          transition={{ delay: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2"
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             className="w-6 h-10 border-2 border-primary/30 rounded-full flex items-start justify-center p-2"
           >
             <div className="w-1 h-2 bg-terracotta rounded-full" />
