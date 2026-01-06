@@ -39,6 +39,16 @@ const portfolioItems: PortfolioItem[] = [
     youtubeId: 'e14lX5mZggU',
     thumbnailUrl: 'https://img.youtube.com/vi/e14lX5mZggU/maxresdefault.jpg',
   },
+  {
+    id: 3,
+    title: 'Application possible dans une présentation powerpoint',
+    category: 'Art rupestre',
+    description:
+      'Même panneau d\'Afrique du Sud',
+    type: 'youtube',
+    youtubeId: '5ICggrAluvk',
+    thumbnailUrl: 'https://img.youtube.com/vi/5ICggrAluvk/maxresdefault.jpg',
+  },
 ];
 
 const categories = ['Tous', 'Art rupestre', 'Art pariétal'];
