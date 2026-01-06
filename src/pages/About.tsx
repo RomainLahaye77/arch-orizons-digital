@@ -6,16 +6,16 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 import photoProfil from '@/assets/photo-profil.jpg';
 const timeline = [
   {
-    year: '2024',
-    title: 'Postdoctorat international à l\'Université de Sherbrooke (Canada)',
-    description:
-      'Recherche sur les arts rupestres du Bouclier canadien (analyses physico-chimiques des matières colorantes, numérisation patrimoniale avancée et développement d\'infrastructures de gestion de données pour une approche intégrée).',
-  },
-  {
     year: 'Décembre 2024',
     title: 'Création d\'Archéorizons',
     description:
       'Lancement de la micro-entreprise spécialisée en documentation 3D et expertise archéologique.',
+  },
+  {
+    year: '2024',
+    title: 'Postdoctorat international à l\'Université de Sherbrooke (Canada)',
+    description:
+      'Recherche sur les arts rupestres du Bouclier canadien (analyses physico-chimiques des matières colorantes, numérisation patrimoniale avancée et développement d\'infrastructures de gestion de données pour une approche intégrée).',
   },
   {
     year: '2016-2023',
