@@ -121,10 +121,10 @@ const Contact = () => {
                       <div>
                         <p className="font-medium text-foreground">Email</p>
                         <a
-                          href="mailto:contact@archeorizons.fr"
+                          href="mailto:romain.lahaye@archeorizons.fr"
                           className="text-terracotta text-sm mt-1 hover:text-terracotta-dark transition-colors"
                         >
-                          contact@archeorizons.fr
+                          romain.lahaye@archeorizons.fr
                         </a>
                       </div>
                     </li>
