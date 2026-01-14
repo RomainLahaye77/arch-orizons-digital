@@ -8,8 +8,8 @@ interface SEOProps {
 }
 
 const BASE_URL = 'https://www.archeorizons.fr';
-const DEFAULT_TITLE = 'Archéorizons | Archeorizons - Documentation archéologique et numérique 3D';
-const DEFAULT_DESCRIPTION = 'Archéorizons (Archeorizons) - Expert en documentation archéologique et numérique 3D. Spécialiste art rupestre, photogrammétrie, modélisation 3D et consulting académique.';
+const DEFAULT_TITLE = 'Archéorizons - Photogrammétrie, Laser & Art pariétal';
+const DEFAULT_DESCRIPTION = 'Archéorizons : expert en photogrammétrie, lasergrammétrie et documentation 3D archéologique. Spécialiste art rupestre, grottes ornées et patrimoine préhistorique.';
 
 const SEO = ({ 
   title = DEFAULT_TITLE, 
