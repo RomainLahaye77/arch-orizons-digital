@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Scan, Mountain, GraduationCap, ArrowRight, Check } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import SEO from '@/components/SEO';
 import documentation3dImage from '@/assets/documentation-3d.jpg';
 import artRupestreImage from '@/assets/art-rupestre.jpg';
 import consultingImage from '@/assets/consulting-academique.jpg';
@@ -58,6 +59,11 @@ const services = [
 const Services = () => {
   return (
     <Layout>
+      <SEO 
+        title="Services - Archéorizons | Documentation 3D, Art rupestre, Consulting"
+        description="Découvrez nos services : documentation 3D par photogrammétrie et lasergrammétrie, expertise en art rupestre, et consulting académique pour la recherche archéologique."
+        path="/services"
+      />
       {/* Header */}
       <section className="pt-48 pb-16 bg-cream">
         <div className="container mx-auto px-6">
