@@ -3,6 +3,7 @@ import { GraduationCap, BookOpen, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import SEO from '@/components/SEO';
 import photoProfil from '@/assets/photo-profil.jpg';
 const timeline = [
   {
@@ -57,6 +58,11 @@ const expertise = [
 const About = () => {
   return (
     <Layout>
+      <SEO 
+        title="À propos - Archéorizons | Archéologue spécialiste documentation 3D"
+        description="Découvrez le parcours d'Archéorizons : docteur en archéologie, spécialiste des arts rupestres et expert en documentation numérique 3D du patrimoine."
+        path="/a-propos"
+      />
       {/* Header */}
       <section className="pt-48 pb-16 bg-cream">
         <div className="container mx-auto px-6">

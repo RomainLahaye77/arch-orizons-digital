@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { ArrowRight, Scan, Mountain, GraduationCap } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import SEO from '@/components/SEO';
 import heroImage from '@/assets/hero-art-rupestre.png';
 
 const Index = () => {
@@ -17,6 +18,11 @@ const Index = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Archéorizons | Archeorizons - Documentation archéologique et numérique 3D"
+        description="Archéorizons (Archeorizons) - Expert en documentation archéologique et numérique 3D. Spécialiste art rupestre, photogrammétrie, modélisation 3D et consulting académique."
+        path="/"
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image - preloaded */}

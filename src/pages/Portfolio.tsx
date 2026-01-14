@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Maximize2, ExternalLink } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import SEO from '@/components/SEO';
 
 // Type pour les items du portfolio
 type PortfolioItem = {
@@ -66,6 +67,11 @@ const Portfolio = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Portfolio - Archéorizons | Projets de documentation 3D et art rupestre"
+        description="Découvrez nos réalisations : modèles 3D haute résolution, relevés d'art rupestre, et projets de documentation archéologique en France et à l'international."
+        path="/portfolio"
+      />
       {/* Header */}
       <section className="pt-48 pb-16 bg-cream">
         <div className="container mx-auto px-6">

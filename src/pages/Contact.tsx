@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { MapPin, Mail, Send, CheckCircle, Loader2 } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import SEO from '@/components/SEO';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -65,6 +66,11 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Contact - Archéorizons | Demande de devis documentation archéologique"
+        description="Contactez Archéorizons pour vos projets de documentation 3D, études d'art rupestre ou consulting académique. Devis gratuit sous 48h."
+        path="/contact"
+      />
       {/* Header */}
       <section className="pt-48 pb-16 bg-cream">
         <div className="container mx-auto px-6">
