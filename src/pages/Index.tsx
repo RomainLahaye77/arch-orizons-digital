@@ -120,7 +120,7 @@ const Index = () => {
                 icon: Scan,
                 title: 'Documentation 3D',
                 description:
-                  'Scans de haute précision réalisés par lasergrammétrie et photogrammétrie pour la conservation et l\'analyse du patrimoine.',
+                  'Acquisition 3D de haute précision réalisés par lasergrammétrie et photogrammétrie pour la conservation et l\'analyse du patrimoine archéologique.',
               },
               {
                 icon: Mountain,
