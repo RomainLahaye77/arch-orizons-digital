@@ -17,6 +17,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,13 +45,13 @@ const Navbar = () => {
               src={logoMammouth}
               alt="Archéorizons Logo"
               className="h-28 lg:h-32 w-auto will-change-transform"
-              initial={{ opacity: 0, x: 100, scale: 0.3 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ 
+              initial={isHomePage ? { opacity: 0, x: 100, scale: 0.3 } : false}
+              animate={isHomePage ? { opacity: 1, x: 0, scale: 1 } : undefined}
+              transition={isHomePage ? { 
                 duration: 1.2, 
                 ease: [0.25, 0.1, 0.25, 1],
                 opacity: { duration: 0.4 }
-              }}
+              } : undefined}
             />
           </Link>
 
@@ -61,12 +62,12 @@ const Navbar = () => {
               src={logoTexte}
               alt="Archéorizons"
               className="h-20 lg:h-24 w-auto will-change-transform"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ 
+              initial={isHomePage ? { opacity: 0, y: 30 } : false}
+              animate={isHomePage ? { opacity: 1, y: 0 } : undefined}
+              transition={isHomePage ? { 
                 duration: 0.8,
                 ease: [0.25, 0.1, 0.25, 1]
-              }}
+              } : undefined}
             />
           </Link>
 
@@ -97,24 +98,24 @@ const Navbar = () => {
               src={logoMammouth}
               alt="Archéorizons Logo"
               className="h-16 w-auto shrink-0 will-change-transform"
-              initial={{ opacity: 0, x: 100, scale: 0.3 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ 
+              initial={isHomePage ? { opacity: 0, x: 100, scale: 0.3 } : false}
+              animate={isHomePage ? { opacity: 1, x: 0, scale: 1 } : undefined}
+              transition={isHomePage ? { 
                 duration: 1.2, 
                 ease: [0.25, 0.1, 0.25, 1],
                 opacity: { duration: 0.4 }
-              }}
+              } : undefined}
             />
             <motion.img
               src={logoTexte}
               alt="Archéorizons"
               className="h-10 sm:h-12 w-auto max-w-[200px] object-contain will-change-transform"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ 
+              initial={isHomePage ? { opacity: 0, y: 30 } : false}
+              animate={isHomePage ? { opacity: 1, y: 0 } : undefined}
+              transition={isHomePage ? { 
                 duration: 0.8,
                 ease: [0.25, 0.1, 0.25, 1]
-              }}
+              } : undefined}
             />
           </Link>
 
