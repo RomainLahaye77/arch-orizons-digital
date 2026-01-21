@@ -6,6 +6,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 import SEO from '@/components/SEO';
 import photoProfil from '@/assets/photo-profil.jpg';
 import usherbrookeImg from '@/assets/usherbrooke.jpg';
+import creationImg from '@/assets/creation-archeorizons.jpg';
 
 interface TimelineItem {
   year: string;
@@ -20,6 +21,7 @@ const timeline: TimelineItem[] = [
     title: 'Création d\'Archéorizons',
     description:
       'Lancement de la micro-entreprise spécialisée en documentation 3D et expertise archéologique.',
+    image: creationImg,
   },
   {
     year: '2024',
