@@ -207,7 +207,7 @@ const About = () => {
                           <img 
                             src={item.image} 
                             alt={item.title}
-                            className="w-full max-w-sm rounded-xl shadow-lg object-cover aspect-[4/3] hover:shadow-xl transition-shadow duration-300"
+                            className="w-full max-w-sm rounded-xl shadow-lg object-contain hover:shadow-xl transition-shadow duration-300"
                           />
                         </div>
                       )}
@@ -226,7 +226,7 @@ const About = () => {
                         <img 
                           src={item.image} 
                           alt={item.title}
-                          className="md:hidden mt-4 w-full rounded-xl shadow-lg object-cover aspect-[4/3]"
+                          className="md:hidden mt-4 w-full rounded-xl shadow-lg object-contain"
                         />
                       )}
                     </div>
