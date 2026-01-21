@@ -4,6 +4,7 @@ import { X, Maximize2, ExternalLink } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SEO from '@/components/SEO';
+import YouTubeEmbed from '@/components/media/YouTubeEmbed';
 
 // Type pour les items du portfolio
 type PortfolioItem = {
@@ -16,7 +17,6 @@ type PortfolioItem = {
   embedId?: string;
   thumbnailUrl?: string;
   youtubeId?: string;
-  embedDisabled?: boolean; // Pour les vidéos YouTube dont l'intégration est désactivée
 };
 
 // Portfolio items - à compléter avec vos propres modèles Sketchfab et images
@@ -40,7 +40,6 @@ const portfolioItems: PortfolioItem[] = [
     type: 'youtube',
     youtubeId: 'e14lX5mZggU',
     thumbnailUrl: 'https://img.youtube.com/vi/e14lX5mZggU/hqdefault.jpg',
-    embedDisabled: true,
   },
   {
     id: 3,
@@ -230,37 +229,11 @@ const Portfolio = () => {
                     allow="autoplay; fullscreen; xr-spatial-tracking"
                     allowFullScreen
                   />
-                ) : selectedItem.type === 'youtube' && selectedItem.embedDisabled ? (
-                  <div className="w-full h-full relative flex items-center justify-center">
-                    <img
-                      src={selectedItem.thumbnailUrl}
-                      alt={selectedItem.title}
-                      className="w-full h-full object-cover absolute inset-0"
-                    />
-                    <div className="absolute inset-0 bg-primary/60 flex flex-col items-center justify-center gap-4">
-                      <p className="text-primary-foreground text-center px-4 text-sm">
-                        L'intégration de cette vidéo est désactivée par le propriétaire.
-                      </p>
-                      <a
-                        href={`https://www.youtube.com/watch?v=${selectedItem.youtubeId}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-medium transition-colors"
-                      >
-                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M8 5v14l11-7z"/>
-                        </svg>
-                        Voir sur YouTube
-                      </a>
-                    </div>
-                  </div>
                 ) : selectedItem.type === 'youtube' ? (
-                  <iframe
+                  <YouTubeEmbed
                     title={selectedItem.title}
-                    src={`https://www.youtube.com/embed/${selectedItem.youtubeId}?rel=0&modestbranding=1&hd=1`}
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+                    youtubeId={selectedItem.youtubeId ?? ''}
+                    thumbnailUrl={selectedItem.thumbnailUrl}
                   />
                 ) : (
                   <img
