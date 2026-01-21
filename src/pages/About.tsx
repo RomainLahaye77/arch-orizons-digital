@@ -7,6 +7,7 @@ import SEO from '@/components/SEO';
 import photoProfil from '@/assets/photo-profil.jpg';
 import usherbrookeImg from '@/assets/usherbrooke.jpg';
 import creationImg from '@/assets/creation-archeorizons.jpg';
+import doctoratImg from '@/assets/doctorat-archeologie.svg';
 
 interface TimelineItem {
   year: string;
@@ -35,6 +36,7 @@ const timeline: TimelineItem[] = [
     title: 'Doctorat en Archéologie',
     description:
       'Thèse sur les arts rupestres d\'Afrique du Sud - méthodologie 3D, analyse spatiale et interprétation.',
+    image: doctoratImg,
   },
   {
     year: '2012-2015',
