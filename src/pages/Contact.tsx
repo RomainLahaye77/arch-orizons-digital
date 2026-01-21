@@ -8,7 +8,7 @@ import SEO from '@/components/SEO';
 import { useToast } from '@/hooks/use-toast';
 
 // Remplace cette clé par ta Site Key Cloudflare Turnstile
-const TURNSTILE_SITE_KEY = 'YOUR_TURNSTILE_SITE_KEY';
+const TURNSTILE_SITE_KEY = '0x4AAAAAACN7OeVdNjIQOSjK';
 
 const Contact = () => {
   const { toast } = useToast();
