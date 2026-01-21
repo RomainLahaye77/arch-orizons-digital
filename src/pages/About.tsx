@@ -5,7 +5,16 @@ import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SEO from '@/components/SEO';
 import photoProfil from '@/assets/photo-profil.jpg';
-const timeline = [
+import usherbrookeImg from '@/assets/usherbrooke.jpg';
+
+interface TimelineItem {
+  year: string;
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const timeline: TimelineItem[] = [
   {
     year: 'Décembre 2024',
     title: 'Création d\'Archéorizons',
@@ -17,6 +26,7 @@ const timeline = [
     title: 'Postdoctorat international à l\'Université de Sherbrooke (Canada)',
     description:
       'Recherche sur les arts rupestres du Bouclier canadien (analyses physico-chimiques des matières colorantes, numérisation patrimoniale avancée et développement d\'infrastructures de gestion de données pour une approche intégrée).',
+    image: usherbrookeImg,
   },
   {
     year: '2016-2023',
@@ -190,7 +200,18 @@ const About = () => {
                         : 'md:flex-row-reverse md:text-right'
                     }`}
                   >
-                    <div className="hidden md:block md:w-1/2" />
+                    {/* Image or empty space */}
+                    <div className="hidden md:block md:w-1/2">
+                      {item.image && (
+                        <div className={`${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+                          <img 
+                            src={item.image} 
+                            alt={item.title}
+                            className="w-full max-w-sm rounded-xl shadow-lg object-cover aspect-[4/3] hover:shadow-xl transition-shadow duration-300"
+                          />
+                        </div>
+                      )}
+                    </div>
                     <div className="absolute left-0 md:left-1/2 w-3 h-3 bg-terracotta rounded-full -translate-x-1 md:-translate-x-1/2 mt-2" />
                     <div className="pl-8 md:pl-0 md:w-1/2">
                       <span className="text-sm font-medium text-terracotta">
@@ -200,6 +221,14 @@ const About = () => {
                         {item.title}
                       </h3>
                       <p className="text-muted-foreground">{item.description}</p>
+                      {/* Image on mobile */}
+                      {item.image && (
+                        <img 
+                          src={item.image} 
+                          alt={item.title}
+                          className="md:hidden mt-4 w-full rounded-xl shadow-lg object-cover aspect-[4/3]"
+                        />
+                      )}
                     </div>
                   </div>
                 </AnimatedSection>
