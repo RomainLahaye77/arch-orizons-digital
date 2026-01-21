@@ -34,21 +34,21 @@ const timeline: TimelineItem[] = [
   },
   {
     year: '2016-2023',
-    title: 'Doctorat en Archéologie',
+    title: 'Doctorat d\'Histoire à l\'Université Paris 1 - Panthéon Sorbonne',
     description:
       'Thèse sur les arts rupestres d\'Afrique du Sud - méthodologie 3D, analyse spatiale et interprétation.',
     image: doctoratImg,
   },
   {
     year: '2012-2015',
-    title: 'Master Archéologie et Histoire',
+    title: 'Master Archéologie et Histoire à l\'Université Rennes 2',
     description:
       'Spécialisation en art pariétal et en préhistoire.',
     image: masterImg,
   },
   {
     year: '2009-2012',
-    title: 'Licence Sociologie Anthropologie',
+    title: 'Licence Sociologie Anthropologie à l\'Université Lille 1',
     description: '',
   },
 ];
