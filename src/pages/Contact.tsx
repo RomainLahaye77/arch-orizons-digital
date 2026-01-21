@@ -1,15 +1,21 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Send, CheckCircle, Loader2 } from 'lucide-react';
+import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SEO from '@/components/SEO';
 import { useToast } from '@/hooks/use-toast';
 
+// Remplace cette clé par ta Site Key Cloudflare Turnstile
+const TURNSTILE_SITE_KEY = 'YOUR_TURNSTILE_SITE_KEY';
+
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -49,6 +55,8 @@ const Contact = () => {
         setTimeout(() => {
           setFormData({ name: '', email: '', subject: '', message: '' });
           setIsSubmitted(false);
+          setTurnstileToken(null);
+          turnstileRef.current?.reset();
         }, 3000);
       } else {
         throw new Error('Erreur lors de l\'envoi');
@@ -59,9 +67,29 @@ const Contact = () => {
         description: 'Une erreur est survenue. Veuillez réessayer.',
         variant: 'destructive',
       });
+      // Reset Turnstile en cas d'erreur
+      setTurnstileToken(null);
+      turnstileRef.current?.reset();
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleTurnstileSuccess = (token: string) => {
+    setTurnstileToken(token);
+  };
+
+  const handleTurnstileError = () => {
+    setTurnstileToken(null);
+    toast({
+      title: 'Erreur de vérification',
+      description: 'Impossible de vérifier que vous êtes humain. Veuillez réessayer.',
+      variant: 'destructive',
+    });
+  };
+
+  const handleTurnstileExpire = () => {
+    setTurnstileToken(null);
   };
 
   return (
@@ -240,28 +268,43 @@ const Contact = () => {
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    disabled={isSubmitting || isSubmitted}
-                    className="w-full md:w-auto px-8 py-4 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-slate-dark transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="w-5 h-5 animate-spin" />
-                        Envoi en cours...
-                      </>
-                    ) : isSubmitted ? (
-                      <>
-                        <CheckCircle className="w-5 h-5" />
-                        Message envoyé !
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-5 h-5" />
-                        Envoyer le message
-                      </>
-                    )}
-                  </button>
+                  {/* Cloudflare Turnstile CAPTCHA */}
+                  <div className="flex flex-col md:flex-row md:items-center gap-4">
+                    <Turnstile
+                      ref={turnstileRef}
+                      siteKey={TURNSTILE_SITE_KEY}
+                      onSuccess={handleTurnstileSuccess}
+                      onError={handleTurnstileError}
+                      onExpire={handleTurnstileExpire}
+                      options={{
+                        theme: 'light',
+                        size: 'normal',
+                      }}
+                    />
+                    
+                    <button
+                      type="submit"
+                      disabled={isSubmitting || isSubmitted || !turnstileToken}
+                      className="w-full md:w-auto px-8 py-4 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-slate-dark transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          Envoi en cours...
+                        </>
+                      ) : isSubmitted ? (
+                        <>
+                          <CheckCircle className="w-5 h-5" />
+                          Message envoyé !
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-5 h-5" />
+                          Envoyer le message
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </form>
               </div>
             </AnimatedSection>
