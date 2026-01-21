@@ -8,6 +8,7 @@ import photoProfil from '@/assets/photo-profil.jpg';
 import usherbrookeImg from '@/assets/usherbrooke.jpg';
 import creationImg from '@/assets/creation-archeorizons.jpg';
 import doctoratImg from '@/assets/doctorat-archeologie.svg';
+import masterImg from '@/assets/master-archeologie-histoire.svg';
 
 interface TimelineItem {
   year: string;
@@ -43,6 +44,7 @@ const timeline: TimelineItem[] = [
     title: 'Master Archéologie et Histoire',
     description:
       'Spécialisation en art pariétal et en préhistoire.',
+    image: masterImg,
   },
   {
     year: '2009-2012',
