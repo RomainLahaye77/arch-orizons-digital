@@ -39,7 +39,7 @@ const portfolioItems: PortfolioItem[] = [
       'Même panneau d\'Afrique du Sud',
     type: 'youtube',
     youtubeId: 'e14lX5mZggU',
-    thumbnailUrl: 'https://img.youtube.com/vi/e14lX5mZggU/maxresdefault.jpg',
+    thumbnailUrl: 'https://img.youtube.com/vi/e14lX5mZggU/hqdefault.jpg',
     embedDisabled: true,
   },
   {
