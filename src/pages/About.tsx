@@ -203,11 +203,11 @@ const About = () => {
                     {/* Image or empty space */}
                     <div className="hidden md:block md:w-1/2">
                       {item.image && (
-                        <div className={`${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+                        <div className={`${index % 2 === 0 ? 'pr-8 flex justify-end' : 'pl-8 flex justify-start'}`}>
                           <img 
                             src={item.image} 
                             alt={item.title}
-                            className="w-full max-w-sm rounded-xl shadow-lg object-contain hover:shadow-xl transition-shadow duration-300"
+                            className="w-auto max-h-64 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                           />
                         </div>
                       )}
