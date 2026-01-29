@@ -16,15 +16,41 @@ const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
+    // Disable right-click context menu
     const handleContextMenu = (e: MouseEvent) => {
       e.preventDefault();
       return false;
     };
 
+    // Disable drag and drop on images
+    const handleDragStart = (e: DragEvent) => {
+      if (e.target instanceof HTMLImageElement) {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    // Disable keyboard shortcuts (Ctrl+S, Ctrl+U, Ctrl+Shift+I, F12)
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Ctrl+S (save), Ctrl+U (view source), Ctrl+Shift+I (dev tools)
+      if (
+        (e.ctrlKey && (e.key === 's' || e.key === 'S' || e.key === 'u' || e.key === 'U')) ||
+        (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J' || e.key === 'c' || e.key === 'C')) ||
+        e.key === 'F12'
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    };
+
     document.addEventListener('contextmenu', handleContextMenu);
+    document.addEventListener('dragstart', handleDragStart);
+    document.addEventListener('keydown', handleKeyDown);
 
     return () => {
       document.removeEventListener('contextmenu', handleContextMenu);
+      document.removeEventListener('dragstart', handleDragStart);
+      document.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
 
