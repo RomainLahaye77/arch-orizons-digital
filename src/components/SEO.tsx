@@ -26,12 +26,16 @@ const SEO = ({
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
       
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:image" content={imageUrl} />
       <meta property="og:site_name" content="Archéorizons" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={imageUrl} />
+      <meta property="og:image:secure_url" content={imageUrl} />
+      <meta property="og:image:alt" content={title} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:locale" content="fr_FR" />
 
       <meta name="twitter:card" content="summary_large_image" />
