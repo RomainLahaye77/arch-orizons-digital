@@ -5,6 +5,10 @@ import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SEO from '@/components/SEO';
 import YouTubeEmbed from '@/components/media/YouTubeEmbed';
+import FadingSlideshow from '@/components/media/FadingSlideshow';
+import faussePierreOrtho from '@/assets/fausse_pierre_ortho.jpg';
+import faussePierreTousImpacts from '@/assets/fausse_pierre_tous_impacts.jpg';
+import faussePierreReleve from '@/assets/fausse_pierre_relevé.jpg';
 
 // Type pour les items du portfolio
 type PortfolioItem = {
@@ -12,11 +16,12 @@ type PortfolioItem = {
   title: string;
   category: string;
   description: string;
-  type: 'image' | 'sketchfab' | 'youtube';
+  type: 'image' | 'sketchfab' | 'youtube' | 'slideshow';
   imageUrl?: string;
   embedId?: string;
   thumbnailUrl?: string;
   youtubeId?: string;
+  slideshowImages?: string[];
 };
 
 // Portfolio items - à compléter avec vos propres modèles Sketchfab et images
