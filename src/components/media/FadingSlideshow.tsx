@@ -18,17 +18,14 @@ export default function FadingSlideshow({ images, interval = 2500, contain = fal
   }, [images.length, interval]);
 
   return (
-    <div className="relative w-full h-full bg-black">
+    <div className="relative w-full h-full overflow-hidden bg-background">
       {images.map((src, i) => (
         <img
           key={src}
           src={src}
           alt=""
-          className={`absolute inset-0 w-full h-full ${contain ? 'object-contain' : 'object-cover'}`}
-          style={{
-            opacity: i === activeIndex ? 1 : 0,
-            transition: 'opacity 1s ease-in-out',
-          }}
+          className={`absolute inset-0 w-full h-full ${contain ? 'object-contain object-center' : 'object-cover'}`}
+          style={{ opacity: i === activeIndex ? 1 : 0, transition: 'opacity 1s ease-in-out' }}
         />
       ))}
     </div>
