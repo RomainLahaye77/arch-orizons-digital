@@ -222,7 +222,7 @@ const Portfolio = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-card rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-elegant-xl"
+              className={`bg-card rounded-2xl w-full max-h-[90vh] overflow-auto shadow-elegant-xl ${selectedItem.type === 'slideshow' ? 'max-w-6xl' : 'max-w-4xl'}`}
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-6 border-b border-border flex items-center justify-between">
@@ -242,7 +242,7 @@ const Portfolio = () => {
                 </button>
               </div>
 
-              <div className="aspect-video bg-muted relative">
+              <div className={`${selectedItem.type === 'slideshow' ? 'aspect-[4/3]' : 'aspect-video'} bg-muted relative`}>
                 {selectedItem.type === 'sketchfab' ? (
                   <iframe
                     title={selectedItem.title}
