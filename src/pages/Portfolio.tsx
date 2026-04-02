@@ -257,6 +257,8 @@ const Portfolio = () => {
                     youtubeId={selectedItem.youtubeId ?? ''}
                     thumbnailUrl={selectedItem.thumbnailUrl}
                   />
+                ) : selectedItem.type === 'slideshow' ? (
+                  <FadingSlideshow images={selectedItem.slideshowImages ?? []} />
                 ) : (
                   <img
                     src={selectedItem.imageUrl}
