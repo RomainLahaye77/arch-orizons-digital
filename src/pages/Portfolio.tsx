@@ -242,7 +242,7 @@ const Portfolio = () => {
                 </button>
               </div>
 
-              <div className="aspect-video bg-muted relative">
+              <div className={`${selectedItem.type === 'slideshow' ? 'aspect-[4/3]' : 'aspect-video'} bg-muted relative`}>
                 {selectedItem.type === 'sketchfab' ? (
                   <iframe
                     title={selectedItem.title}
