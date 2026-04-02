@@ -168,6 +168,13 @@ const Portfolio = () => {
                             Vidéo
                           </div>
                         </div>
+                      ) : item.type === 'slideshow' ? (
+                        <div className="w-full h-full relative">
+                          <FadingSlideshow images={item.slideshowImages ?? []} />
+                          <div className="absolute bottom-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded z-10">
+                            Animation
+                          </div>
+                        </div>
                       ) : (
                         <div className="w-full h-full relative">
                           <img
