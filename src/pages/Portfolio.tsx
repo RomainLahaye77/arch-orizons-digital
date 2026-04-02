@@ -222,10 +222,10 @@ const Portfolio = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className={`bg-card rounded-2xl w-full max-h-[90vh] overflow-auto shadow-elegant-xl ${selectedItem.type === 'slideshow' ? 'max-w-6xl' : 'max-w-4xl'}`}
+              className={`bg-card rounded-2xl w-full shadow-elegant-xl flex flex-col ${selectedItem.type === 'slideshow' ? 'max-w-[96vw] h-[92vh] overflow-hidden' : 'max-w-4xl max-h-[90vh] overflow-hidden'}`}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="p-6 border-b border-border flex items-center justify-between">
+              <div className={`border-b border-border flex items-center justify-between shrink-0 ${selectedItem.type === 'slideshow' ? 'p-4 md:p-5' : 'p-6'}`}>
                 <div>
                   <span className="text-xs font-medium text-terracotta uppercase tracking-wider">
                     {selectedItem.category}
@@ -242,7 +242,7 @@ const Portfolio = () => {
                 </button>
               </div>
 
-              <div className={`${selectedItem.type === 'slideshow' ? 'aspect-[4/3]' : 'aspect-video'} bg-muted relative`}>
+              <div className={selectedItem.type === 'slideshow' ? 'relative flex-1 min-h-0 bg-background' : 'aspect-video bg-muted relative'}>
                 {selectedItem.type === 'sketchfab' ? (
                   <iframe
                     title={selectedItem.title}
@@ -296,7 +296,7 @@ const Portfolio = () => {
                 </div>
               )}
 
-              <div className="p-6">
+              <div className={`border-t border-border shrink-0 ${selectedItem.type === 'slideshow' ? 'px-4 py-3 md:px-5' : 'p-6'}`}>
                 <p className="text-muted-foreground">{selectedItem.description}</p>
               </div>
             </motion.div>
