@@ -258,7 +258,7 @@ const Portfolio = () => {
                     thumbnailUrl={selectedItem.thumbnailUrl}
                   />
                 ) : selectedItem.type === 'slideshow' ? (
-                  <FadingSlideshow images={selectedItem.slideshowImages ?? []} />
+                  <FadingSlideshow images={selectedItem.slideshowImages ?? []} contain />
                 ) : (
                   <img
                     src={selectedItem.imageUrl}
