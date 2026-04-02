@@ -5,6 +5,10 @@ import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SEO from '@/components/SEO';
 import YouTubeEmbed from '@/components/media/YouTubeEmbed';
+import FadingSlideshow from '@/components/media/FadingSlideshow';
+import faussePierreOrtho from '@/assets/fausse_pierre_ortho.jpg';
+import faussePierreTousImpacts from '@/assets/fausse_pierre_tous_impacts.jpg';
+import faussePierreReleve from '@/assets/fausse_pierre_relevé.jpg';
 
 // Type pour les items du portfolio
 type PortfolioItem = {
@@ -12,11 +16,12 @@ type PortfolioItem = {
   title: string;
   category: string;
   description: string;
-  type: 'image' | 'sketchfab' | 'youtube';
+  type: 'image' | 'sketchfab' | 'youtube' | 'slideshow';
   imageUrl?: string;
   embedId?: string;
   thumbnailUrl?: string;
   youtubeId?: string;
+  slideshowImages?: string[];
 };
 
 // Portfolio items - à compléter avec vos propres modèles Sketchfab et images
@@ -50,6 +55,16 @@ const portfolioItems: PortfolioItem[] = [
     type: 'youtube',
     youtubeId: '5ICggrAluvk',
     thumbnailUrl: 'https://img.youtube.com/vi/5ICggrAluvk/maxresdefault.jpg',
+  },
+  {
+    id: 4,
+    title: 'De l\'orthomosaïque au relevé',
+    category: 'Art rupestre',
+    description:
+      'Animation montrant les étapes successives : orthomosaïque haute résolution, identification des impacts, et relevé final.',
+    type: 'slideshow',
+    slideshowImages: [faussePierreOrtho, faussePierreTousImpacts, faussePierreReleve],
+    thumbnailUrl: faussePierreOrtho,
   },
 ];
 
@@ -153,6 +168,13 @@ const Portfolio = () => {
                             Vidéo
                           </div>
                         </div>
+                      ) : item.type === 'slideshow' ? (
+                        <div className="w-full h-full relative">
+                          <FadingSlideshow images={item.slideshowImages ?? []} />
+                          <div className="absolute bottom-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded z-10">
+                            Animation
+                          </div>
+                        </div>
                       ) : (
                         <div className="w-full h-full relative">
                           <img
@@ -235,6 +257,8 @@ const Portfolio = () => {
                     youtubeId={selectedItem.youtubeId ?? ''}
                     thumbnailUrl={selectedItem.thumbnailUrl}
                   />
+                ) : selectedItem.type === 'slideshow' ? (
+                  <FadingSlideshow images={selectedItem.slideshowImages ?? []} />
                 ) : (
                   <img
                     src={selectedItem.imageUrl}
