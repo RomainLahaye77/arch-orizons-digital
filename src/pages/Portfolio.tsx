@@ -56,6 +56,16 @@ const portfolioItems: PortfolioItem[] = [
     youtubeId: '5ICggrAluvk',
     thumbnailUrl: 'https://img.youtube.com/vi/5ICggrAluvk/maxresdefault.jpg',
   },
+  {
+    id: 4,
+    title: 'De l\'orthomosaïque au relevé',
+    category: 'Art rupestre',
+    description:
+      'Animation montrant les étapes successives : orthomosaïque haute résolution, identification des impacts, et relevé final.',
+    type: 'slideshow',
+    slideshowImages: [faussePierreOrtho, faussePierreTousImpacts, faussePierreReleve],
+    thumbnailUrl: faussePierreOrtho,
+  },
 ];
 
 const categories = ['Tous', 'Art rupestre', 'Art pariétal'];
