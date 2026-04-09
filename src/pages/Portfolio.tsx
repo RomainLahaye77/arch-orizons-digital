@@ -184,7 +184,7 @@ const Portfolio = () => {
                         </div>
                       ) : item.type === 'slideshow' ? (
                         <div className="w-full h-full relative">
-                          <FadingSlideshow images={item.slideshowImages ?? []} />
+                          <FadingSlideshow images={item.slideshowImages ?? []} interval={item.interval} />
                           <div className="absolute bottom-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded z-10">
                             Animation
                           </div>
@@ -272,7 +272,7 @@ const Portfolio = () => {
                     thumbnailUrl={selectedItem.thumbnailUrl}
                   />
                 ) : selectedItem.type === 'slideshow' ? (
-                  <FadingSlideshow images={selectedItem.slideshowImages ?? []} contain />
+                  <FadingSlideshow images={selectedItem.slideshowImages ?? []} contain interval={selectedItem.interval} />
                 ) : (
                   <img
                     src={selectedItem.imageUrl}
