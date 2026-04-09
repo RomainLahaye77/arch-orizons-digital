@@ -1,31 +1,26 @@
 
 
-## Plan: Add fading animation item to Portfolio
+## Plan: Add second slideshow to Portfolio
 
 ### Summary
-Add a 4th portfolio item that displays a looping slideshow of 3 photos with a fade transition (2-3s per image). The existing 3 video items keep their red "Vidéo" badge; the new item gets a red "Animation" badge.
+Add a 5th portfolio item — a 2-image fading slideshow (orthomosaïque → relevé) with a 4-second interval, in the "Art rupestre" category.
 
 ### Steps
 
-1. **Copy the 3 uploaded images to `src/assets/`**
-   - `fausse_pierre_ortho.jpg`
-   - `fausse_pierre_tous_impacts.jpg`
-   - `fausse_pierre_relevé.jpg`
+1. **Copy images to `src/assets/`**
+   - `bambooramaComplet_copielight_2.jpg` (orthomosaïque)
+   - `Bamboo_relevé_2_copie.jpg` (relevé)
 
-2. **Create `src/components/media/FadingSlideshow.tsx`**
-   - Takes an array of image URLs as prop
-   - Cycles through images with a ~2.5s interval
-   - Uses CSS opacity transitions (1s fade) for smooth crossfade
-   - All images are stacked absolutely; only the active one has `opacity: 1`
+2. **Update `src/pages/Portfolio.tsx`**
+   - Add a 5th item with `type: 'slideshow'`, `interval: 4000`, images in order: orthomosaïque → relevé
+   - Title: "Orthomosaïque et relevé – Bamboo Hollow"
+   - Category: "Art rupestre"
 
-3. **Update `src/pages/Portfolio.tsx`**
-   - Add a new `type: 'slideshow'` to the `PortfolioItem` type with a `slideshowImages` field
-   - Add the 4th item (category "Art rupestre", type "slideshow") with images in order: ortho → impacts → relevé
-   - In the grid thumbnail rendering, use `FadingSlideshow` for slideshow items with a red "Animation" badge
-   - In the modal, render the full-size `FadingSlideshow`
+3. **Update `FadingSlideshow` usage**
+   - The component already accepts an `interval` prop — the new item will pass `4000` (4s) instead of the default 2500ms
+   - Pass interval through the Portfolio grid and modal renderings
 
-### Technical Details
-- The slideshow uses `useState` + `useEffect` with `setInterval` to cycle the active index
-- Images are layered with `position: absolute` and `transition: opacity 1s ease-in-out`
-- Badge logic: `youtube` → "Vidéo" (red), `slideshow` → "Animation" (red), `sketchfab` → "Modèle 3D" (primary)
+### Technical Detail
+- The `FadingSlideshow` component already supports a custom `interval` prop, so no component changes needed
+- Need to add `interval` to the `PortfolioItem` type and thread it through the grid thumbnail and modal renders
 
