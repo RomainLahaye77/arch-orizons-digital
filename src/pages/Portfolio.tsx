@@ -71,7 +71,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 5,
-    title: 'Orthomosaïque et relevé – Bamboo Hollow',
+    title: 'Orthomosaïque et relevé – Bamboo Hollow (Afrique du Sud)',
     category: 'Art rupestre',
     description:
       'Passage en fondu entre l\'orthomosaïque haute résolution et le relevé d\'un panneau orné à Bamboo Hollow.',
