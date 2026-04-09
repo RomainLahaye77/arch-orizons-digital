@@ -9,6 +9,8 @@ import FadingSlideshow from '@/components/media/FadingSlideshow';
 import faussePierreOrtho from '@/assets/fausse_pierre_ortho.jpg';
 import faussePierreTousImpacts from '@/assets/fausse_pierre_tous_impacts.jpg';
 import faussePierreReleve from '@/assets/fausse_pierre_relevé.jpg';
+import bambooOrtho from '@/assets/bambooramaComplet_copielight_2.jpg';
+import bambooReleve from '@/assets/Bamboo_relevé_2_copie.jpg';
 
 // Type pour les items du portfolio
 type PortfolioItem = {
@@ -22,6 +24,7 @@ type PortfolioItem = {
   thumbnailUrl?: string;
   youtubeId?: string;
   slideshowImages?: string[];
+  interval?: number;
 };
 
 // Portfolio items - à compléter avec vos propres modèles Sketchfab et images
@@ -65,6 +68,17 @@ const portfolioItems: PortfolioItem[] = [
     type: 'slideshow',
     slideshowImages: [faussePierreOrtho, faussePierreTousImpacts, faussePierreReleve],
     thumbnailUrl: faussePierreOrtho,
+  },
+  {
+    id: 5,
+    title: 'Orthomosaïque et relevé – Bamboo Hollow',
+    category: 'Art rupestre',
+    description:
+      'Passage en fondu entre l\'orthomosaïque haute résolution et le relevé d\'un panneau orné à Bamboo Hollow.',
+    type: 'slideshow',
+    slideshowImages: [bambooOrtho, bambooReleve],
+    thumbnailUrl: bambooOrtho,
+    interval: 4000,
   },
 ];
 
@@ -170,7 +184,7 @@ const Portfolio = () => {
                         </div>
                       ) : item.type === 'slideshow' ? (
                         <div className="w-full h-full relative">
-                          <FadingSlideshow images={item.slideshowImages ?? []} />
+                          <FadingSlideshow images={item.slideshowImages ?? []} interval={item.interval} />
                           <div className="absolute bottom-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded z-10">
                             Animation
                           </div>
@@ -258,7 +272,7 @@ const Portfolio = () => {
                     thumbnailUrl={selectedItem.thumbnailUrl}
                   />
                 ) : selectedItem.type === 'slideshow' ? (
-                  <FadingSlideshow images={selectedItem.slideshowImages ?? []} contain />
+                  <FadingSlideshow images={selectedItem.slideshowImages ?? []} contain interval={selectedItem.interval} />
                 ) : (
                   <img
                     src={selectedItem.imageUrl}
