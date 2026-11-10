@@ -4,6 +4,7 @@ import { ArrowRight, Check, Database, Landmark, Building2, Briefcase, Clock, Cal
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SEO from '@/components/SEO';
+import heroImage from '@/assets/formation-ia-equipe.jpg';
 
 const publics = [
   {
@@ -69,26 +70,43 @@ const Formation = () => {
       {/* Header */}
       <section className="pt-48 pb-16 bg-cream">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <span className="text-sm font-medium text-terracotta uppercase tracking-wider">
-              Formation
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl font-semibold text-primary mt-3 mb-6">
-              Maîtriser l'IA pour garder la main sur ses données
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              L'IA est un outil, pas une menace ni un miracle. Ceux qui la maîtrisent
-              gardent la main sur leur travail et sur leurs données ; ceux qui attendent
-              finissent par la subir. Archéorizons propose des formations courtes,
-              concrètes et adaptées à votre métier, pour faire grandir votre activité
-              avec l'outil plutôt que de la subir.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-3xl"
+            >
+              <span className="text-sm font-medium text-terracotta uppercase tracking-wider">
+                Formation
+              </span>
+              <h1 className="font-display text-4xl md:text-5xl font-semibold text-primary mt-3 mb-6">
+                Maîtriser l'IA pour garder la main sur ses données
+              </h1>
+              <p className="text-lg text-muted-foreground">
+                L'IA est un outil, pas une menace ni un miracle. Ceux qui la maîtrisent
+                gardent la main sur leur travail et sur leurs données ; ceux qui attendent
+                finissent par la subir. Archéorizons propose des formations courtes,
+                concrètes et adaptées à votre métier, pour faire grandir votre activité
+                avec l'outil plutôt que de la subir.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="relative"
+            >
+              <div className="aspect-[16/9] rounded-2xl overflow-hidden border border-border/30 shadow-elegant">
+                <img
+                  src={heroImage}
+                  alt="Équipe en formation autour d'une base de données patrimoniale"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-terracotta/10 rounded-full blur-2xl" />
+            </motion.div>
+          </div>
         </div>
       </section>
 

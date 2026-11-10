@@ -7,6 +7,7 @@ import SEO from '@/components/SEO';
 import documentation3dImage from '@/assets/documentation-3d.jpg';
 import artRupestreImage from '@/assets/art-rupestre.jpg';
 import consultingImage from '@/assets/consulting-academique.jpg';
+import formationImage from '@/assets/formation-ia-atelier.jpg';
 
 interface Service {
   icon: typeof Scan;
@@ -77,7 +78,7 @@ const services: Service[] = [
       'Formation à la photogrammétrie et à la documentation 3D',
       'Sensibilisation des élus et des directions : ce que l\'IA change, ce qu\'elle ne fait pas',
     ],
-    image: null,
+    image: formationImage,
     link: '/formation',
   },
 ];
