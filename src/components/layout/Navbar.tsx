@@ -8,6 +8,7 @@ import logoTexte from '@/assets/logo-texte.jpg';
 const navLinks = [
   { name: 'Accueil', path: '/' },
   { name: 'Services', path: '/services' },
+  { name: 'Formation', path: '/formation' },
   { name: 'Portfolio', path: '/portfolio' },
   { name: 'À propos', path: '/a-propos' },
   { name: 'Contact', path: '/contact' },

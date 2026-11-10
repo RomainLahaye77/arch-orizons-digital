@@ -15,7 +15,7 @@ const Footer = () => {
               Entreprise Individuelle
             </p>
             <p className="text-primary-foreground/70 text-sm leading-relaxed max-w-xs">
-              Expertise archéologique et documentation 3D pour la recherche et le patrimoine.
+              Expertise archéologique, documentation 3D et formation à l'IA pour la recherche, le patrimoine, les collectivités et les entreprises.
             </p>
           </div>
 
@@ -28,6 +28,7 @@ const Footer = () => {
               {[
                 { name: 'Accueil', path: '/' },
                 { name: 'Services', path: '/services' },
+                { name: 'Formation', path: '/formation' },
                 { name: 'Portfolio', path: '/portfolio' },
                 { name: 'À propos', path: '/a-propos' },
                 { name: 'Contact', path: '/contact' },
