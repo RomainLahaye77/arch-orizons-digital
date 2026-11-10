@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Scan, Mountain, GraduationCap, ArrowRight, Check } from 'lucide-react';
+import { Scan, Mountain, GraduationCap, BrainCircuit, ArrowRight, Check } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SEO from '@/components/SEO';
@@ -8,11 +8,21 @@ import documentation3dImage from '@/assets/documentation-3d.jpg';
 import artRupestreImage from '@/assets/art-rupestre.jpg';
 import consultingImage from '@/assets/consulting-academique.jpg';
 
-const services = [
+interface Service {
+  icon: typeof Scan;
+  title: string;
+  subtitle: string;
+  description: string;
+  features: string[];
+  image: string | null;
+  link?: string;
+}
+
+const services: Service[] = [
   {
     icon: Scan,
     title: 'Documentation 3D',
-    subtitle: '',
+    subtitle: 'Terrain',
     description:
       'Création de modèles 3D haute résolution par lasergrammétrie et photogrammétrie pour la documentation, la conservation et la valorisation du patrimoine archéologique.',
     features: [
@@ -26,33 +36,49 @@ const services = [
   },
   {
     icon: Mountain,
-    title: 'Art Rupestre',
-    subtitle: '',
+    title: 'Étude et expertise des sites ornés',
+    subtitle: 'Étude',
     description:
-      'Expertise spécialisée dans l\'étude des arts rupestres, combinant approche méthodologique rigoureuse et documentations approfondies.',
+      'Étude scientifique de sites d\'art rupestre et d\'art pariétal, de l\'inventaire au rapport, avec une approche méthodologique rigoureuse issue de la recherche doctorale et postdoctorale.',
     features: [
       'Inventaire et documentation de sites',
       'Relevés numériques des panneaux',
       'Analyse stylistique et iconographique',
       'Études de conservation préventive',
-      'Rapports scientifiques',
+      'Rapports scientifiques et dossiers de protection',
     ],
     image: artRupestreImage,
   },
   {
     icon: GraduationCap,
-    title: 'Consulting Académique',
-    subtitle: 'Recherche & Formation',
+    title: 'Conseil et accompagnement scientifique',
+    subtitle: 'Conseil',
     description:
-      'Accompagnement de projets de recherche académique et transfert de compétences en documentation numérique du patrimoine.',
+      'Accompagnement de projets de recherche, de collectivités et d\'institutions patrimoniales : méthode, expertise et rédaction.',
     features: [
       'Conseil méthodologique',
-      'Formation à la photogrammétrie',
       'Co-encadrement de travaux',
       'Relecture et expertise scientifique',
-      'Rédaction d\'articles et rapports',
+      'Rédaction d\'articles, de rapports et de dossiers',
+      'Appui aux demandes de subvention et aux projets de valorisation',
     ],
     image: consultingImage,
+  },
+  {
+    icon: BrainCircuit,
+    title: 'Maîtriser l\'IA pour ses données',
+    subtitle: 'Formation',
+    description:
+      'Formations courtes et accompagnements pour apprendre à utiliser l\'IA comme un outil de travail sur vos propres données : inventaires, bases, fonds documentaires, fichiers métier. Une méthode construite sur des milliers de relevés 3D, transposable à tout service qui produit et exploite de l\'information.',
+    features: [
+      'Atelier découverte de 30 minutes, gratuit, sur site',
+      'Journée « Structurer et exploiter ses données avec l\'IA »',
+      'Accompagnement sur un cas réel : conception d\'une base ou d\'un tableau de gestion',
+      'Formation à la photogrammétrie et à la documentation 3D',
+      'Sensibilisation des élus et des directions : ce que l\'IA change, ce qu\'elle ne fait pas',
+    ],
+    image: null,
+    link: '/formation',
   },
 ];
 
@@ -60,8 +86,8 @@ const Services = () => {
   return (
     <Layout>
       <SEO 
-        title="Services - Archéorizons | Documentation 3D, Art rupestre, Consulting"
-        description="Découvrez nos services : documentation 3D par photogrammétrie et lasergrammétrie, expertise en art rupestre, et consulting académique pour la recherche archéologique."
+        title="Services - Archéorizons | Documentation 3D, étude des sites ornés, conseil, formation IA"
+        description="Quatre services complémentaires : documentation 3D par photogrammétrie et lasergrammétrie, étude et expertise des sites ornés, conseil scientifique, formation à l'IA et aux données."
         path="/services"
       />
       {/* Header */}
@@ -80,8 +106,9 @@ const Services = () => {
               Des expertises complémentaires
             </h1>
             <p className="text-lg text-muted-foreground">
-              De la documentation de terrain au consulting académique, des solutions
-              adaptées aux besoins de la recherche et du patrimoine.
+              Documenter, étudier, conseiller, former : quatre services complémentaires,
+              du terrain à la transmission, pour la recherche, le patrimoine, les
+              collectivités et les entreprises.
             </p>
           </motion.div>
         </div>
@@ -122,6 +149,15 @@ const Services = () => {
                         </li>
                       ))}
                     </ul>
+                    {service.link && (
+                      <Link
+                        to={service.link}
+                        className="inline-flex items-center gap-2 mt-8 text-terracotta font-medium hover:gap-3 transition-all link-underline"
+                      >
+                        En savoir plus sur la formation
+                        <ArrowRight size={18} />
+                      </Link>
+                    )}
                   </div>
 
                   <div

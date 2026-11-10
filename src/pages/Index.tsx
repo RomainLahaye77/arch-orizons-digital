@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { ArrowRight, Scan, Mountain, GraduationCap } from 'lucide-react';
+import { ArrowRight, Scan, Mountain, GraduationCap, BrainCircuit } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SEO from '@/components/SEO';
@@ -19,8 +19,8 @@ const Index = () => {
   return (
     <Layout>
       <SEO 
-        title="Archéorizons | Archeorizons - Documentation archéologique et numérique 3D"
-        description="Archéorizons (Archeorizons) - Expert en documentation archéologique et numérique 3D. Spécialiste art rupestre, photogrammétrie, modélisation 3D et consulting académique."
+        title="Archéorizons | Documentation 3D, art rupestre et formation à l'IA"
+        description="Archéorizons (Archeorizons) : documentation archéologique 3D (photogrammétrie, lasergrammétrie), étude des sites ornés, conseil scientifique et formation à l'IA appliquée aux données pour les musées, les collectivités et les entreprises. Basé à Guérande."
         path="/"
       />
       {/* Hero Section */}
@@ -56,7 +56,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
               className="text-lg md:text-xl text-primary font-medium max-w-2xl mb-10 [text-shadow:_0_1px_8px_rgb(255_255_255_/_90%),_0_0_20px_rgb(255_255_255_/_70%)] will-change-transform"
             >
-              Documentation 3D (photogrammétrie, lasergrammétrie, télémétrie), expertise en art rupestre et consulting académique pour la recherche et le patrimoine culturel.
+              Documentation 3D (photogrammétrie, lasergrammétrie, télémétrie), étude des sites ornés, conseil scientifique et formation à l'IA appliquée aux données, pour la recherche, le patrimoine, les collectivités et les entreprises.
             </motion.p>
 
             <motion.div
@@ -114,25 +114,31 @@ const Index = () => {
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 icon: Scan,
                 title: 'Documentation 3D',
                 description:
-                  'Acquisition 3D de haute précision réalisés par lasergrammétrie et photogrammétrie pour la conservation et l\'analyse du patrimoine archéologique.',
+                  'Acquisition 3D de haute précision réalisée par lasergrammétrie et photogrammétrie pour la conservation et l\'analyse du patrimoine archéologique.',
               },
               {
                 icon: Mountain,
-                title: 'Art Rupestre',
+                title: 'Étude et expertise des sites ornés',
                 description:
-                  'Spécialisation en art rupestre, avec une approche méthodologique rigoureuse.',
+                  'Étude scientifique de sites d\'art rupestre et d\'art pariétal, de l\'inventaire au rapport.',
               },
               {
                 icon: GraduationCap,
-                title: 'Consulting Académique',
+                title: 'Conseil et accompagnement scientifique',
                 description:
-                  'Accompagnement de projets de recherche, formations et expertise scientifique.',
+                  'Accompagnement de projets de recherche, de collectivités et d\'institutions patrimoniales.',
+              },
+              {
+                icon: BrainCircuit,
+                title: 'Maîtriser l\'IA pour ses données',
+                description:
+                  'Structurer, exploiter et protéger ses données avec l\'IA, avec une méthode issue de la recherche. Pour les musées, les collectivités et les entreprises.',
               },
             ].map((service, index) => (
               <AnimatedSection key={service.title} delay={index * 0.15}>
@@ -169,11 +175,11 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center">
             <AnimatedSection>
               <h2 className="font-display text-3xl md:text-4xl font-semibold mb-6">
-                Un projet de documentation archéologique ?
+                Un projet de documentation, ou des données à maîtriser ?
               </h2>
               <p className="text-primary-foreground/70 text-lg mb-10 max-w-xl mx-auto">
                 Discutons ensemble de vos besoins et trouvons la meilleure approche
-                pour valoriser votre patrimoine.
+                pour valoriser votre patrimoine et vos données.
               </p>
               <Link
                 to="/contact"

@@ -31,7 +31,18 @@ jobs:
         
       - name: Build
         run: npm run build
-        
+
+      # Pré-rendu : génère une vraie page HTML pour chaque adresse du site
+      # (voir scripts/prerender.mjs). Playwright est installé sans toucher au
+      # package-lock.json.
+      - name: Install Playwright (prerender)
+        run: |
+          npm install --no-save playwright@1.49.1
+          npx playwright install --with-deps chromium
+
+      - name: Prerender routes
+        run: node scripts/prerender.mjs
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

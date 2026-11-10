@@ -1,4 +1,5 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Send, CheckCircle, Loader2 } from 'lucide-react';
 import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
@@ -22,6 +23,15 @@ const Contact = () => {
     subject: '',
     message: '',
   });
+  const [searchParams] = useSearchParams();
+
+  // Présélection du sujet depuis l'adresse (ex. /contact?sujet=atelier)
+  useEffect(() => {
+    const sujet = searchParams.get('sujet');
+    if (sujet) {
+      setFormData((prev) => ({ ...prev, subject: sujet }));
+    }
+  }, [searchParams]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -96,7 +106,7 @@ const Contact = () => {
     <Layout>
       <SEO 
         title="Contact - Archéorizons | Demande de devis documentation archéologique"
-        description="Contactez Archéorizons pour vos projets de documentation 3D, études d'art rupestre ou consulting académique. Devis gratuit sous 48h."
+        description="Contactez Archéorizons pour vos projets de documentation 3D, d'étude de sites ornés, de conseil scientifique ou de formation à l'IA. Réponse sous 48 h ouvrées."
         path="/contact"
       />
       {/* Header */}
@@ -115,8 +125,10 @@ const Contact = () => {
               Parlons de votre projet
             </h1>
             <p className="text-lg text-muted-foreground">
-              Vous avez un projet de documentation archéologique ou souhaitez
-              simplement échanger ? N'hésitez pas à me contacter.
+              Vous avez un projet de documentation archéologique, des données à
+              structurer, ou vous souhaitez organiser un atelier découverte sur l'IA
+              dans votre collectivité, votre musée ou votre entreprise ? N'hésitez pas
+              à me contacter.
             </p>
           </motion.div>
         </div>
@@ -242,8 +254,10 @@ const Contact = () => {
                     >
                       <option value="">Sélectionnez un sujet</option>
                       <option value="documentation-3d">Documentation 3D</option>
-                      <option value="art-rupestre">Art rupestre</option>
-                      <option value="consulting">Consulting académique</option>
+                      <option value="art-rupestre">Étude et expertise des sites ornés</option>
+                      <option value="consulting">Conseil et accompagnement scientifique</option>
+                      <option value="formation">Formation IA et données</option>
+                      <option value="atelier">Atelier découverte gratuit (30 min)</option>
                       <option value="devis">Demande de devis</option>
                       <option value="autre">Autre</option>
                     </select>

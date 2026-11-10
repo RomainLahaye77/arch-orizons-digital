@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { GraduationCap, BookOpen, Award, ArrowRight } from 'lucide-react';
+import { GraduationCap, BookOpen, Award, ArrowRight, Database } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import AnimatedSection from '@/components/ui/AnimatedSection';
@@ -69,6 +69,11 @@ const expertise = [
     title: 'Recherche',
     description: 'Publications scientifiques et participation à des projets internationaux.',
   },
+  {
+    icon: Database,
+    title: 'Données et IA',
+    description: 'Conception de bases de données et usage maîtrisé de l\'IA pour structurer, exploiter et protéger l\'information.',
+  },
 ];
 
 const About = () => {
@@ -76,7 +81,7 @@ const About = () => {
     <Layout>
       <SEO 
         title="À propos - Archéorizons | Archéologue spécialiste documentation 3D"
-        description="Découvrez le parcours d'Archéorizons : docteur en archéologie, spécialiste des arts rupestres et expert en documentation numérique 3D du patrimoine."
+        description="Le parcours d'Archéorizons : docteur en histoire, spécialiste des arts rupestres, expert en documentation numérique 3D du patrimoine et en gestion de données assistée par l'IA."
         path="/a-propos"
       />
       {/* Header */}
@@ -141,6 +146,23 @@ const About = () => {
                   techniques de photogrammétrie et de modélisation 3D.
                 </p>
               </div>
+              <h3 className="font-display text-2xl font-semibold text-primary mt-10 mb-4">
+                Des données à l'IA
+              </h3>
+              <div className="prose prose-lg text-muted-foreground space-y-4">
+                <p>
+                  La numérisation 3D à grande échelle produit des volumes de données
+                  considérables. Pour les traiter seul pendant ma thèse, puis pour
+                  développer des infrastructures de gestion de données à Sherbrooke,
+                  j'ai fait de l'IA un outil de travail quotidien : conception de bases
+                  de données, structuration de corpus, automatisation des tâches
+                  répétitives, toujours sous contrôle et avec vérification.
+                </p>
+                <p>
+                  C'est cette pratique, née de la recherche, que je transmets aujourd'hui
+                  aux musées, aux collectivités et aux entreprises.
+                </p>
+              </div>
             </AnimatedSection>
           </div>
         </div>
@@ -158,7 +180,7 @@ const About = () => {
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {expertise.map((item, index) => (
               <AnimatedSection key={item.title} delay={index * 0.15}>
                 <div className="text-center p-8">

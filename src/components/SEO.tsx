@@ -7,9 +7,9 @@ interface SEOProps {
   type?: string;
 }
 
-const BASE_URL = 'https://www.archeorizons.fr';
-const DEFAULT_TITLE = 'Archéorizons - Photogrammétrie, Laser & Art pariétal';
-const DEFAULT_DESCRIPTION = 'Archéorizons : expert en photogrammétrie, lasergrammétrie et documentation 3D archéologique. Spécialiste art rupestre, grottes ornées et patrimoine préhistorique.';
+const BASE_URL = 'https://archeorizons.fr';
+const DEFAULT_TITLE = 'Archéorizons – Documentation 3D, art rupestre et formation à l\'IA';
+const DEFAULT_DESCRIPTION = 'Archéorizons : documentation 3D archéologique (photogrammétrie, lasergrammétrie), étude des sites ornés, conseil scientifique et formation à l\'IA appliquée aux données pour les musées, les collectivités et les entreprises. Basé à Guérande.';
 
 const SEO = ({ 
   title = DEFAULT_TITLE, 

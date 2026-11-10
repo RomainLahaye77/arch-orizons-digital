@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
+import Formation from "./pages/Formation";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -64,6 +65,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/formation" element={<Formation />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/a-propos" element={<About />} />
             <Route path="/contact" element={<Contact />} />
